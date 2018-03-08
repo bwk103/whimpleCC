@@ -1,0 +1,35 @@
+$navbar-link-colour :rgba(255, 255, 255, 0.98);
+
+header {
+  font-family: 'Cousine', monospace;
+  display: flex;
+  flex-direction: row;
+  height: 72px;
+  background-color: rgba(213, 213, 213, 0);
+  align-items: center;
+  justify-content: space-around;
+  text-transform: uppercase;
+  border-bottom: 2px solid grey;
+
+  .logo {
+    font-weight: 700;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    text-shadow: 0px 1px rgb(156, 156, 156);
+  }
+  ul {
+    list-style: none;
+    li {
+      display: inline;
+      a {
+        letter-spacing: 1px;
+        margin-left: 50px;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: $navbar-link-colour;
+  }
+}
