@@ -1,16 +1,18 @@
-body#landing {
+div#landing {
   background-image: image-url('whimple1.jpg');
   margin: 0;
   padding: 0;
-  position: fixed;
+  position: absolute;
+  height: 800px;
   top: 0;
   left:0;
   right:0;
   bottom:0;
   background-size:cover;
+  background-repeat: no-repeat;
 }
 
-div.content {
+div.content-head {
   margin-top: 130px;
   display: flex;
   flex-direction: column;
@@ -47,3 +49,46 @@ div.title {
     font-size: 32px;
   }
 }
+
+div.header {
+  border-bottom: 2px solid black;
+
+  .title {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+  h1 {
+    color: black;
+    margin: auto;
+    align-self: center;
+    padding: 5px 150px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h3 {
+    color: black;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+  }
+}
+
+.sponsor-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 600px;
+  background: pink;
+}
+
+// .next {
+//   position: relative;
+//   margin-top: 800px;
+//   height: 500px;
+//   background: pink;
+// }
