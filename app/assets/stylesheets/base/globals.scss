@@ -1,7 +1,7 @@
 $navbar-link-colour :rgba(255, 255, 255, 0.98);
 
 header {
-  font-family: 'Cousine', monospace;
+  font-family: 'Work Sans', sans-serif;
   display: flex;
   flex-direction: row;
   height: 72px;
@@ -9,10 +9,9 @@ header {
   align-items: center;
   justify-content: space-around;
   text-transform: uppercase;
-  border-bottom: 2px solid grey;
 
   .logo {
-    font-weight: 700;
+    font-weight: 300;
     font-size: 1.5em;
     letter-spacing: 2px;
     text-shadow: 0px 1px rgb(156, 156, 156);
@@ -32,4 +31,8 @@ header {
     text-decoration: none;
     color: $navbar-link-colour;
   }
+}
+
+#main {
+  margin-top: 20px;
 }
