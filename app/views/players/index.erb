@@ -5,13 +5,9 @@
       <h3>Who's Who at Whimple CC</h3>
     </div>
   </div>
-  <div class="player-list-section">
-    <div class="player-list">
-      <ul>
-        <% @players.each do | player | %>
-          <%= render 'player', { player: player } %>
-        <% end %>
-      </ul>
-    </div>
+  <div class="player-list">
+    <% @players.each do | player | %>
+      <%= render 'player', { player: player } %>
+    <% end %>
   </div>
 </div>

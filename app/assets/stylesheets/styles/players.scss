@@ -1,9 +1,25 @@
-.player-list-section{
+.player-list{
+  margin: auto;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 40%;
 }
 
 .player {
-  border-bottom: 1px grey solid;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+  margin-right: 20px;
+}
+
+.player-picture {
+  margin-right: 10px;
+}
+
+.player-details {
+  display: flex;
+  flex-direction: column;
 }
