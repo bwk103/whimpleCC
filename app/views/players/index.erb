@@ -1,1 +1,17 @@
-This is the players index view
+<div id="players" class="content">
+  <div class="header">
+    <div class="title">
+      <h1>Players</h1>
+      <h3>Who's Who at Whimple CC</h3>
+    </div>
+  </div>
+  <div class="player-list-section">
+    <div class="player-list">
+      <ul>
+        <% @players.each do | player | %>
+          <%= render 'player', { player: player } %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

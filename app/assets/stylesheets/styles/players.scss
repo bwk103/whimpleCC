@@ -1,0 +1,9 @@
+.player-list-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.player {
+  border-bottom: 1px grey solid;
+}
