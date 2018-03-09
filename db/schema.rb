@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20180309144043) do
     t.string "first_name"
     t.string "surname"
     t.string "email"
-    t.string "team"
+    t.integer "team"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["surname"], name: "index_players_on_surname"
