@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get '/history', to: 'static_pages#history'
   get '/ground', to: 'static_pages#ground'
   get '/sponsors', to: 'static_pages#sponsors'
+  get '/players', to: 'players#index'
 end
