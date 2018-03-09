@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/ground', to: 'static_pages#ground'
   get '/sponsors', to: 'static_pages#sponsors'
   get '/players', to: 'players#index'
+  get '/events', to: 'events#index'
 end
