@@ -83,7 +83,19 @@ div.header {
   flex-direction: row;
   justify-content: space-around;
   height: 600px;
-  background: pink;
+  background: rgba(199, 199, 199, 0.47);
+}
+
+.sponsor {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+#sponsors {
+  h3 {
+    text-align: center;
+  }
 }
 
 // .next {
