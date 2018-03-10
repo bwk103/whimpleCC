@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/sponsors', to: 'static_pages#sponsors'
   get '/players', to: 'players#index'
   get '/events', to: 'events#index'
+  resources :events
 end
