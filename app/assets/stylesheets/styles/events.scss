@@ -1,0 +1,12 @@
+.event-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.event {
+  margin-top: 5px;
+  border-bottom: 1px solid grey
+}

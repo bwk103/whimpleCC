@@ -1,1 +1,13 @@
-This is going to be the list of events
+<div id="events" class="content">
+  <div class="header">
+    <div class="title">
+      <h1>Events</h1>
+      <h3>Whats happening?</h3>
+    </div>
+  </div>
+  <div class="event-list">
+    <% @events.each do | event | %>
+      <%= render 'event', { event: event } %>
+    <% end %>
+  </div>
+</div>
