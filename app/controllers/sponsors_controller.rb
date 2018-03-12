@@ -21,6 +21,24 @@ class SponsorsController < ApplicationController
     end
   end
 
+  def edit
+    @sponsor = Sponsor.find(params[:id])
+  end
+
+  def update
+    @sponsor = Sponsor.find(params[:id])
+    if @sponsor.update_attributes(sponsor_params)
+      redirect_to @sponsor
+    else
+      redirect_to edit_sponsor_url(@sponsor)
+    end
+  end
+
+  def destroy
+    Sponsor.find(params[:id]).destroy
+    redirect_to sponsors_url
+  end
+
   private
 
   def sponsor_params

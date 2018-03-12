@@ -84,4 +84,63 @@ RSpec.describe SponsorsController, type: :controller do
       end
     end
   end
+
+  describe "#edit" do
+    before(:example) do
+      get :edit, :params => { :id => @sponsor.id.to_s }
+    end
+
+    it "assigns the requested sponsor to @sponsor" do
+      expect(assigns(:sponsor).name).to eq 'Whiteways'
+    end
+
+    it "returns a 200 status code" do
+      expect(response.status).to eq 200
+    end
+
+    it "renders the edit template" do
+      expect(response).to render_template 'edit'
+    end
+  end
+
+  describe "#update" do
+    describe "with valid attributes" do
+      it "updates the sponsor's details" do
+        patch :update, :params => { :id => @sponsor.id.to_s, :sponsor => @valid_sponsor }
+        @sponsor.reload
+        expect(@sponsor.name).to eq 'Pub'
+        expect(@sponsor.website).to eq 'www.pub.com'
+      end
+
+      it "redirects to the sponsor's profile page" do
+        patch :update, :params => { :id => @sponsor.id.to_s, :sponsor => @valid_sponsor }
+        expect(response).to redirect_to @sponsor
+      end
+    end
+    describe "without valid attributes" do
+      it "does not update the sponsor's details" do
+        patch :update, :params => { :id => @sponsor.id.to_s, :sponsor => @invalid_sponsor }
+        @sponsor.reload
+        expect(@sponsor.name).to eq "Whiteways"
+      end
+
+      it "redirects to the edit sponsor path" do
+        patch :update, :params => { :id => @sponsor.id.to_s, :sponsor => @invalid_sponsor }
+        expect(response).to redirect_to edit_sponsor_url(@sponsor)
+      end
+    end
+  end
+
+  describe "#destroy" do
+    it "deletes the sponsor" do
+      expect {
+        delete :destroy, :params => { :id => @sponsor.id.to_s }
+      }.to change(Sponsor, :count).by(-1)
+    end
+
+    it "redirects to the sponsor index" do
+      delete :destroy, :params => { :id => @sponsor.id.to_s }
+      expect(response).to redirect_to sponsors_url
+    end
+  end
 end
