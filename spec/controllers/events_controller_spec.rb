@@ -1,13 +1,27 @@
 require 'rails_helper'
 
 RSpec.describe EventsController, type: :controller do
-  describe "#index" do
 
+  before(:example) do
+    @event = Event.create!(name: 'Band Night',
+                           date: Date.new(2018, 3, 12),
+                           location: 'Knowle Cross',
+                           description: 'Its band night!')
+
+    @valid_event = { :name => 'BBQ',
+                     :date => Date.new(2018, 2, 1),
+                     :location => 'Knowle Cross',
+                     :description => 'Burnt food and cold beer' }
+
+    @invalid_event = { name: nil,
+                       date: Date.new(2018, 3, 12),
+                       location: 'Whimple CC',
+                       description: 'Band night is back!'
+    }
+  end
+
+  describe "#index" do
     before(:example) do
-      event = Event.create!(name: 'Band Night',
-                            date: Date.new(2018, 3, 12),
-                            location: 'Knowle Cross',
-                            description: 'Its band night!')
       get :index
     end
 
@@ -27,11 +41,7 @@ RSpec.describe EventsController, type: :controller do
   describe '#show' do
 
     before(:example) do
-      event = Event.create!(name: 'Band Night',
-                            date: Date.new(2018, 3, 12),
-                            location: 'Knowle Cross',
-                            description: 'Its band night!')
-      get :show, :params => { :id => event.id.to_s}
+      get :show, :params => { :id => @event.id.to_s}
     end
 
     it "assigns the requested event to event" do
@@ -65,39 +75,81 @@ RSpec.describe EventsController, type: :controller do
   end
 
   describe '#create' do
-    describe "with valid attributeds" do
-      event = { :name => 'BBQ',
-                :date => Date.new(2018, 2, 1),
-                :location => 'Knowle Cross',
-                :description => 'Burnt food and cold beer' }
+    describe "with valid attributes" do
+
       it "creates a new event" do
         expect {
-          post :create, :params => { :event => event }
+          post :create, :params => { :event => @valid_event }
         }.to change(Event, :count).by(1)
       end
 
       it "redirects to the new event page" do
-        post :create, :params => { :event => event }
+        post :create, :params => { :event => @valid_event }
         expect(response).to redirect_to Event.last
       end
     end
 
     describe 'without valid attributes' do
-      event = { :name => nil,
-                :date => Date.new(2018, 2, 1),
-                :location => 'Knowle Cross',
-                :description => 'Burnt food and cold beer' }
-
       it "does not create a new event" do
         expect {
-          post :create, :params => { :event => event }
+          post :create, :params => { :event => @invalid_event }
         }.not_to change(Event, :count)
       end
 
       it "redirects to the new event form" do
-        post :create, :params => { :event => event }
+        post :create, :params => { :event => @invalid_event }
         expect(response).to redirect_to new_event_path
       end
+    end
+  end
+
+  describe '#edit' do
+    before(:example) do
+      get :edit, :params => { :id => @event.id.to_s }
+    end
+
+    it "assigns the requested event to event" do
+      expect(assigns(:event).name).to eq 'Band Night'
+    end
+
+    it "returns a 200 status code" do
+      expect(response.status).to eq 200
+    end
+
+    it 'reders the edit template' do
+      expect(response).to render_template 'edit'
+    end
+  end
+
+  describe '#update' do
+    describe "when given valid attributes" do
+      it "updates the event" do
+        patch :update, :params => { :id => @event.id, :event => @valid_event }
+        @event.reload
+        expect(@event.name).to eq 'BBQ'
+        expect(@event.description).to eq 'Burnt food and cold beer'
+      end
+
+      it "redirects to the events show page" do
+        patch :update, :params => { :id => @event.id, :event => @valid_event }
+        expect(response).to redirect_to @event
+      end
+    end
+
+    describe "when not given valid attributes" do
+      it "does not update the event" do
+        patch :update, :params => { :id => @event.id, :event => @invalid_event }
+        @event.reload
+        expect(@event.name).to eq 'Band Night'
+      end
+    end
+  end
+
+  describe "#destroy" do
+    it "deletes the event" do
+      expect {
+        delete :destroy, :params => { :id => @event.id }
+      }.to change(Event, :count).by(-1)
     end
   end
 end
