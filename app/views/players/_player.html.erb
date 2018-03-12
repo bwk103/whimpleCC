@@ -3,7 +3,7 @@
       <img src="http://via.placeholder.com/150x150" alt="">
    </div>
    <div class="player-details">
-      <h1><%= player.first_name %> <%= player.surname %></h1>
+      <h1><%= link_to full_name(player), player_path(player) %></h1>
       <h3>1st XI</h3>
    </div>
 </div>

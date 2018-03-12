@@ -80,7 +80,7 @@ RSpec.describe PlayersController, type: :controller do
   end
   describe "#show" do
     before(:example) do
-      get :show, :params => { :id => @player.id.to_s}
+      get :show, :params => { :id => @player.id.to_s }
     end
 
     it "assigns the requested player" do
@@ -96,6 +96,60 @@ RSpec.describe PlayersController, type: :controller do
 
     it "renders the show template" do
       expect(response).to render_template 'show'
+    end
+  end
+
+  describe "#edit" do
+    before(:example) do
+      get :edit, :params => { :id => @player.id.to_s }
+    end
+
+    it "assigns the requested player" do
+      expect(assigns(:player).first_name).to eq 'Henry'
+      expect(assigns(:player).surname).to eq 'Bowler'
+      expect(assigns(:player).email).to eq 'henry@test.com'
+      expect(assigns(:player).team).to eq 1
+    end
+
+    it "returns a 200 status code" do
+      expect(response.status).to eq 200
+    end
+
+    it "renders the edit template" do
+      expect(response).to render_template 'edit'
+    end
+  end
+
+  describe "#update" do
+    describe "when given valid attributes" do
+      it "updates the player" do
+        patch :update, :params => { :id => @player.id.to_s, :player => @valid_player }
+        @player.reload
+        expect(@player.first_name).to eq "James"
+        expect(@player.surname).to eq 'Adams'
+        expect(@player.email).to eq 'james@test.com'
+        expect(@player.team).to eq 1
+      end
+
+      it "redirects the user to the players profile" do
+        patch :update, :params => { :id => @player.id.to_s, :player => @valid_player }
+        expect(response).to redirect_to @player
+      end
+    end
+
+    describe "when given invalid attributes" do
+      it "does not update the player" do
+        patch :update, :params => { :id => @player.id.to_s, :player => @invalid_player }
+        @player.reload
+        expect(@player.first_name).to eq 'Henry'
+        expect(@player.surname).to eq 'Bowler'
+        expect(@player.email).to eq 'henry@test.com'
+      end
+
+      it "redirects the user to the players index" do
+        patch :update, :params => { :id => @player.id.to_s, :player => @invalid_player }
+        expect(response).to redirect_to edit_player_path(@player)
+      end
     end
   end
 end

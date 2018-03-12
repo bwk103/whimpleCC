@@ -1,12 +1,3 @@
+<% provide(:btn_text, 'Create Player') %>
 <h1>Add Player</h1>
-<%= form_for @player do |f| %>
-  <%= f.label :first_name, 'First Name:' %>
-  <%= f.text_field :first_name %>
-  <%= f.label :surname, 'Surname:' %>
-  <%= f.text_field :surname %>
-  <%= f.label :email, 'Email:' %>
-  <%= f.email_field :email %>
-  <%= f.label :team, 'Team:' %>
-  <%= f.number_field :team %>
-  <%= f.submit 'Create Player' %>
-<% end %>
+<%= render 'player_form' %>
