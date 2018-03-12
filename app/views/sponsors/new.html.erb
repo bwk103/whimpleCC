@@ -1,14 +1,4 @@
+<%= provide(:title, 'Create Sponsor') %>
+<%= provide(:btn_text, 'Create Sponsor') %>
 <h1>Add New Sponsor</h1>
-<%= form_for @sponsor do |f| %>
-<%= f.label :name, 'Name:' %>
-<%= f.text_field :name %>
-<%= f.label :website, 'Website:' %>
-<%= f.text_field :website %>
-<%= f.label :email, 'Email:' %>
-<%= f.email_field :email %>
-<%= f.label :phone, 'Phone No:' %>
-<%= f.text_field :phone %>
-<%= f.label :address, 'Address:' %>
-<%= f.text_area :address %>
-<%= f.submit 'Create Sponsor' %>
-<% end %>
+<%= render 'sponsor_form' %>

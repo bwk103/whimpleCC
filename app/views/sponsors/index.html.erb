@@ -1,1 +1,7 @@
-This is the sponsor index page
+<% provide(:title, 'Sponsors') %>
+<h1>Sponsors</h1>
+<div class="sponsor-list">
+  <% @sponsors.each do | sponsor | %>
+    <%= render 'sponsor', { sponsor: sponsor } %>
+  <% end %>
+</div>

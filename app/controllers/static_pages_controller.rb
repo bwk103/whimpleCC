@@ -10,7 +10,4 @@ class StaticPagesController < ApplicationController
 
   def ground
   end
-
-  def sponsors
-  end
 end
