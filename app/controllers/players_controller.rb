@@ -16,7 +16,7 @@ class PlayersController < ApplicationController
     if @player.save
       redirect_to @player
     else
-      redirect_to new_player_path
+      redirect_to new_player_url
     end
   end
 
@@ -29,8 +29,13 @@ class PlayersController < ApplicationController
     if @player.update_attributes(player_params)
       redirect_to @player
     else
-      redirect_to edit_player_path(@player)
+      redirect_to edit_player_url(@player)
     end
+  end
+
+  def destroy
+    Player.find(params[:id]).destroy
+    redirect_to players_url
   end
 
   private

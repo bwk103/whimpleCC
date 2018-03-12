@@ -152,4 +152,16 @@ RSpec.describe PlayersController, type: :controller do
       end
     end
   end
+
+  describe "#destroy" do
+    it "deletes the player" do
+      expect {
+        delete :destroy, :params => { :id => @player.id.to_s }
+      }.to change(Player, :count).by(-1)
+    end
+    it "redirects the user back to the players index" do
+      delete :destroy, :params => { :id => @player.id.to_s }
+      expect(response).to redirect_to players_path
+    end
+  end
 end
