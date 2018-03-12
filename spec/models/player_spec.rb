@@ -16,7 +16,7 @@ RSpec.describe Player, type: :model do
 
   describe "adding invalid players" do
     it "players must have a first name" do
-      @player.first_name = nil;
+      @player.first_name = nil
       expect(@player).not_to be_valid
     end
 
