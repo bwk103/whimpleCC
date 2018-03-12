@@ -1,8 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe PlayersController, type: :controller do
-
   before(:example) do
+
+    @player = Player.create!(
+      first_name: 'Henry',
+      surname: 'Bowler',
+      email: 'henry@test.com',
+      team: 1
+    )
+
     @valid_player = {
       first_name: 'James',
       surname: 'Adams',
@@ -69,6 +76,26 @@ RSpec.describe PlayersController, type: :controller do
         post :create, :params => { :player => @invalid_player }
         expect(response).to redirect_to new_player_path
       end
+    end
+  end
+  describe "#show" do
+    before(:example) do
+      get :show, :params => { :id => @player.id.to_s}
+    end
+
+    it "assigns the requested player" do
+      expect(assigns(:player).first_name).to eq 'Henry'
+      expect(assigns(:player).surname).to eq 'Bowler'
+      expect(assigns(:player).email).to eq 'henry@test.com'
+      expect(assigns(:player).team).to eq 1
+    end
+
+    it "returns status code 200" do
+      expect(response.status).to eq 200
+    end
+
+    it "renders the show template" do
+      expect(response).to render_template 'show'
     end
   end
 end
