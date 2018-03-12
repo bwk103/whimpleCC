@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe SponsorsController, type: :controller do
 
   before(:example) do
+    @sponsor = Sponsor.create!(name:'Whiteways', website: 'www.whiteways.com')
     @valid_sponsor = { name: 'Pub', website: 'www.pub.com' }
     @invalid_sponsor = { name: nil, website: 'www.something.com' }
   end
@@ -22,6 +23,24 @@ RSpec.describe SponsorsController, type: :controller do
 
     it "renders the index template" do
       expect(response).to render_template 'index'
+    end
+  end
+
+  describe "#show" do
+    before(:example) do
+      get :show, :params => { :id => @sponsor.id.to_s }
+    end
+
+    it "assigns the requested sponsor to @sponsor" do
+      expect(assigns(:sponsor).name).to eq 'Whiteways'
+    end
+
+    it "returns a 200 status code" do
+      expect(response.status).to eq 200
+    end
+
+    it "renders the show template" do
+      expect(response).to render_template 'show'
     end
   end
 

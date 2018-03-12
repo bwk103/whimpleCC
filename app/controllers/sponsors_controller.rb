@@ -8,6 +8,10 @@ class SponsorsController < ApplicationController
     @sponsor = Sponsor.new
   end
 
+  def show
+    @sponsor = Sponsor.find(params[:id])
+  end
+
   def create
     @sponsor = Sponsor.new(sponsor_params)
     if @sponsor.save
