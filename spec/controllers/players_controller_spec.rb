@@ -2,6 +2,22 @@ require 'rails_helper'
 
 RSpec.describe PlayersController, type: :controller do
 
+  before(:example) do
+    @valid_player = {
+      first_name: 'James',
+      surname: 'Adams',
+      email: 'james@test.com',
+      team: 1
+    }
+
+    @invalid_player = {
+      first_name: nil,
+      surname: nil,
+      email: 'james@test.com',
+      team: 1
+    }
+  end
+
   describe "#index" do
     it "returns a status code of 200" do
       get :index
@@ -11,6 +27,48 @@ RSpec.describe PlayersController, type: :controller do
     it "renders the index template" do
       get :index
       expect(response).to render_template("index")
+    end
+  end
+
+  describe "#new" do
+    before(:example) do
+      get :new
+    end
+
+    it "returns a status code of 200" do
+      expect(response.status).to eq 200
+    end
+
+    it "renders the new template" do
+      expect(response).to render_template 'new'
+    end
+  end
+
+  describe '#create' do
+    describe "when given valid attributes" do
+      it "creates a new player" do
+        expect {
+          post :create, :params => { :player => @valid_player }
+        }.to change(Player, :count).by(1)
+      end
+
+      it "redirects to the new players profile" do
+        post :create, :params => { :player => @valid_player }
+        expect(response).to redirect_to Player.last
+      end
+    end
+
+    describe "when given invalid attributes" do
+      it "does not create a new player" do
+        expect {
+          post :create, :params => { :player => @invalid_player }
+        }.not_to change(Player, :count)
+      end
+
+      it "redirects the user back to the new player form" do
+        post :create, :params => { :player => @invalid_player }
+        expect(response).to redirect_to new_player_path
+      end
     end
   end
 end
