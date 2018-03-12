@@ -1,10 +1,10 @@
 <div class="event">
   <div class="event-image">
-    <a href=""><img src="http://via.placeholder.com/150x150" alt="placeholder"></a>
+    <a href="<%= event_path(event) %>"><img src="http://via.placeholder.com/150x150" alt="placeholder"></a>
   </div>
   <div class="event-details">
-    <a href=""><h4><%= event.name %></h4></a>
-    <p><%= event.date.strftime('%e %B %Y at %I:%M') %></p>
+    <a href="<%= event_path(event) %>"><h4><%= event.name %></h4></a>
+    <p><%= formatted_date(event.date) %></p>
     <p><%= event.location %></p>
   </div>
 </div>

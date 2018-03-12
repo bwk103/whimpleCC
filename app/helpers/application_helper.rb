@@ -7,4 +7,8 @@ module ApplicationHelper
       "#{title} | #{base_title}"
     end
   end
+
+  def formatted_date(datetime)
+    datetime.strftime('%e %B %Y at %I:%M')
+  end
 end

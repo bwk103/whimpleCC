@@ -1,1 +1,6 @@
-This is going to be the show event controller.
+<div>
+  <h1><%= @event.name %></h1>
+  <h2><%= formatted_date(@event.date) %></h2>
+  <h2><%= @event.location %></h2>
+  <p><%= @event.description %></p>
+</div>
