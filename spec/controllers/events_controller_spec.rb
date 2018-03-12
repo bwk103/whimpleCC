@@ -63,4 +63,41 @@ RSpec.describe EventsController, type: :controller do
       expect(response).to render_template 'new'
     end
   end
+
+  describe '#create' do
+    describe "with valid attributeds" do
+      event = { :name => 'BBQ',
+                :date => Date.new(2018, 2, 1),
+                :location => 'Knowle Cross',
+                :description => 'Burnt food and cold beer' }
+      it "creates a new event" do
+        expect {
+          post :create, :params => { :event => event }
+        }.to change(Event, :count).by(1)
+      end
+
+      it "redirects to the new event page" do
+        post :create, :params => { :event => event }
+        expect(response).to redirect_to Event.last
+      end
+    end
+
+    describe 'without valid attributes' do
+      event = { :name => nil,
+                :date => Date.new(2018, 2, 1),
+                :location => 'Knowle Cross',
+                :description => 'Burnt food and cold beer' }
+
+      it "does not create a new event" do
+        expect {
+          post :create, :params => { :event => event }
+        }.not_to change(Event, :count)
+      end
+
+      it "redirects to the new event form" do
+        post :create, :params => { :event => event }
+        expect(response).to redirect_to new_event_path
+      end
+    end
+  end
 end
