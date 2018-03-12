@@ -5,6 +5,7 @@ class SponsorsController < ApplicationController
   end
 
   def new
+    @sponsor = Sponsor.new
   end
 
   def create
