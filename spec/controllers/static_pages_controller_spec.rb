@@ -58,17 +58,17 @@ RSpec.describe StaticPagesController, type: :controller do
     end
   end
 
-  describe "ground" do
-    before(:each) do
-      get :sponsors
-    end
-
-    it "returns a 200 status code" do
-      expect(response.status).to eq 200
-    end
-
-    it "renders the sponsors template" do
-      expect(response).to render_template("sponsors")
-    end
-  end
+  # describe "sponsors" do
+  #   before(:each) do
+  #     get :sponsors
+  #   end
+  #
+  #   it "returns a 200 status code" do
+  #     expect(response.status).to eq 200
+  #   end
+  #
+  #   it "renders the sponsors template" do
+  #     expect(response).to render_template("sponsors")
+  #   end
+  # end
 end
