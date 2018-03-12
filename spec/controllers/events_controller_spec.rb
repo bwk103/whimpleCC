@@ -49,4 +49,18 @@ RSpec.describe EventsController, type: :controller do
       expect(response).to render_template 'show'
     end
   end
+
+  describe '#new' do
+    before(:example) do
+      get :new
+    end
+
+    it 'returns a 200 status code' do
+      expect(response.status).to eq 200
+    end
+
+    it "renders the new template" do
+      expect(response).to render_template 'new'
+    end
+  end
 end
