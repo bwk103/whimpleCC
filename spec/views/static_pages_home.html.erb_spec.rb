@@ -1,5 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 
-RSpec.describe "static_pages/home" do
-
+RSpec.describe 'static_pages/home' do
 end
