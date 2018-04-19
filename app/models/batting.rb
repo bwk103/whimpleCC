@@ -1,5 +1,5 @@
 class Batting < ApplicationRecord
-  belongs_to :player
+  # belongs_to :player
 
   attr_accessor :average
 
