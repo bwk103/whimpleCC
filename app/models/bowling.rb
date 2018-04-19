@@ -1,4 +1,6 @@
 class Bowling < ApplicationRecord
+  belongs_to :player
+
   attr_accessor :economy, :strike_rate
   validates :overs, numericality: { greater_than_or_equal_to: 0 }
   validates :maidens, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: :overs }
@@ -18,5 +20,4 @@ class Bowling < ApplicationRecord
   def set_average
     self.average = (runs / wickets.to_f).round(1)
   end
-
 end

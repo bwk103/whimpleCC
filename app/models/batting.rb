@@ -1,5 +1,5 @@
 class Batting < ApplicationRecord
-  # belongs_to :player
+  belongs_to :player
 
   attr_accessor :average
 
@@ -20,7 +20,7 @@ class Batting < ApplicationRecord
   validates :hundreds, numericality: { greater_than_or_equal_to: 0 }
 
   def set_average
-    return self.average = nil if self.innings == self.not_outs
+    return self.average = nil if innings == not_outs
     self.average = runs / (innings - not_outs)
   end
 end

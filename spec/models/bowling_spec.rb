@@ -2,14 +2,21 @@ require 'rails_helper'
 
 RSpec.describe Bowling, type: :model do
   before(:example) do
+    @player = Player.new(
+      first_name: 'Test',
+      surname: 'Player',
+      email: 'test@email.com',
+      team: 1
+    )
     @bowl = Bowling.new(
       overs: 10.0,
       maidens: 3,
       runs: 30,
       wickets: 7,
-      best: "30/5",
+      best: '30/5',
       five_for: 1
     )
+    @player.bowling = @bowl
   end
 
   describe('bowling stats') do

@@ -2,6 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Batting, type: :model do
   before(:example) do
+    @player = Player.new(
+      first_name: 'Test',
+      surname: 'Player',
+      email: 'test@email.com',
+      team: 1
+    )
     @bat = Batting.new(
       games: 1,
       innings: 2,
@@ -12,6 +18,7 @@ RSpec.describe Batting, type: :model do
       fifties: 0,
       hundreds: 0
     )
+    @player.batting = @bat
   end
 
   describe('batting model') do
@@ -100,10 +107,10 @@ RSpec.describe Batting, type: :model do
       expect(@bat.average).to be 50
     end
 
-    it("catches the situation where batsman has never been out") do
-    @bat.not_outs = 2
-    @bat.set_average
-    expect(@bat.average).to be_nil
+    it('catches the situation where batsman has never been out') do
+      @bat.not_outs = 2
+      @bat.set_average
+      expect(@bat.average).to be_nil
     end
   end
 end

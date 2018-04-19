@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180419143128) do
+ActiveRecord::Schema.define(version: 20180419145414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20180419143128) do
     t.float "average"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "player_id"
+    t.index ["player_id"], name: "index_bowlings_on_player_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -76,4 +78,5 @@ ActiveRecord::Schema.define(version: 20180419143128) do
   end
 
   add_foreign_key "battings", "players"
+  add_foreign_key "bowlings", "players"
 end
