@@ -1,4 +1,6 @@
 class Batting < ApplicationRecord
+  belongs_to :player
+
   attr_accessor :average
 
   validates :games, numericality: { greater_than_or_equal_to: 0 }
