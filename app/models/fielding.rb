@@ -1,0 +1,2 @@
+class Fielding < ApplicationRecord
+end
