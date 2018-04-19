@@ -39,6 +39,16 @@ header {
   }
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+.dropdown-content {
+  display: none;
+}
+
 #main {
   margin-top: 80px;
 }

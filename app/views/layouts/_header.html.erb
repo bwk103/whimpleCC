@@ -4,11 +4,16 @@
   </div>
   <div class="nav-links">
     <ul>
-      <li><%= link_to 'Club', '#' %></li>
+      <li><%= link_to 'Club', '#', class: 'dropdown' %>
+        <ul class="dropdown-content">
+          <%= link_to 'History', history_path %>
+        </ul>
+      </li>
       <li><%= link_to 'Squads', players_path %></li>
       <li><%= link_to 'Fixtures', '#' %></li>
       <li><%= link_to 'Events', events_path %></li>
       <li><%= link_to 'More', '#' %></li>
     </ul>
   </div>
+  <p class="secret">Here is a paragraph</p>
 </header>
