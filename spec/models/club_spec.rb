@@ -25,5 +25,15 @@ RSpec.describe Club, type: :model do
         expect(@club).not_to be_valid
       end
     end
+    describe 'ground' do
+      it 'must not be nil' do
+        @club.ground = nil
+        expect(@club).not_to be_valid
+      end
+      it 'must be at least 10 characters long' do
+        @club.ground = 'somewhere'
+        expect(@club).not_to be_valid
+      end
+    end
   end
 end
