@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/players', to: 'players#index'
   get '/events', to: 'events#index'
   resources :players
+  resources :clubs
   resources :events
   resources :sponsors
 end
