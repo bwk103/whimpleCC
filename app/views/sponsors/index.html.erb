@@ -1,7 +1,7 @@
 <% provide(:title, 'Sponsors') %>
 <h1>Sponsors</h1>
-<div class="sponsor-list">
+<article class="sponsor-list">
   <% @sponsors.each do | sponsor | %>
     <%= render 'sponsor', { sponsor: sponsor } %>
   <% end %>
-</div>
+</article>
