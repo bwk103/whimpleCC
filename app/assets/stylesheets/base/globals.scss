@@ -1,7 +1,17 @@
 $navbar-link-colour :rgba(255, 255, 255, 0.98);
 
 nav {
-  font-family: 'Work Sans', sans-serif;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left:0;
+  right:0;
+  bottom:0;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  font-family: 'Hind', sans-serif;
   display: flex;
   flex-direction: row;
   height: 72px;
@@ -9,12 +19,7 @@ nav {
   align-items: center;
   justify-content: space-around;
   text-transform: uppercase;
-  position: absolute;
   z-index: 2;
-  top: 0;
-  left:0;
-  right:0;
-  bottom:0;
   .logo {
     font-weight: 300;
     font-size: 1.5em;
@@ -46,11 +51,3 @@ nav {
   position: relative;
   display: inline-block;
 }
-
-#main {
-  margin-top: 80px;
-}
-
-// body {
-//   // background: rgba(29, 176, 105, 0.91);
-// }
