@@ -1,4 +1,4 @@
-div#landing {
+div.landing {
   margin: 0;
   padding: 0;
   position: absolute;
@@ -7,6 +7,7 @@ div#landing {
   left:0;
   right:0;
   bottom:0;
+  // background: url(background2.jpg);
   background-size:cover;
   background-repeat: no-repeat;
 }
