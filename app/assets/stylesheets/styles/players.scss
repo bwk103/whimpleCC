@@ -1,23 +1,92 @@
-.player-list{
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+#players-index {
+  font-family: 'Hind', sans-serif;
+
+  section.title {
+    height: 600px;
+    width: 100%;
+    background: url("card1.jpg");
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    div.description {
+      align-self: center;
+
+      h1 {
+        align-self: center;
+        font-size: 70px;
+        letter-spacing: 1.5px;
+        font-weight: 700;
+        color: white;
+        font-weight: bold;
+        line-height: 63px;
+        border-bottom: 2px solid white;
+      } 
+    }
+  }
+
+  div.player-list {
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 10px;
+  }
+
+  article.player {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    div.player-picture {
+      object-fit: cover;
+    }
+  
+    div.player-details {
+      color: white;
+      text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      background: $whimple-green;
+
+      a {
+        color: white;
+      }
+      p {
+       padding: 5px;
+      }
+    }
+  }
 }
 
-.player {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 5px;
-  width: 30%;
-  justify-content: center;
-}
 
-.player-picture {
-  margin-right: 10px;
-}
+// .player-list{
+//   margin-top: 20px;
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+// }
 
-.player-details {
-  display: flex;
-  flex-direction: column;
-}
+// .player {
+//   display: flex;
+//   flex-direction: row;
+//   margin-bottom: 5px;
+//   width: 30%;
+//   justify-content: center;
+// }
+
+// .player-picture {
+//   margin-right: 10px;
+// }
+
+// .player-details {
+//   display: flex;
+//   flex-direction: column;
+// }

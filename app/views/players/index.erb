@@ -1,14 +1,16 @@
 <% provide(:title, 'Players') %>
-<section id="players" class="content">
-  <div class="header">
-    <div class="title">
-      <h1>Players</h1>
-      <h3>Who's Who at Whimple CC</h3>
-    </div>
+
+  <div id="players-index">
+  <section class="title">
+  <div class="image-overlay">
   </div>
+    <div class="description">
+      <h1>Players</h1>
+    </div>
+  </section>
   <div class="player-list">
     <% @players.each do | player | %>
       <%= render 'player', { player: player } %>
     <% end %>
   </div>
-</section>
+</div>
