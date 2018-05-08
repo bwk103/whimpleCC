@@ -76,6 +76,7 @@ div#home {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    padding-bottom: 20px;
     
     .card {
       display: flex;
@@ -86,6 +87,12 @@ div#home {
       img {
         height: 70%;
         width: 70%;
+      }
+
+      p {
+        font-size: 18px;
+        width: 50%;
+        text-align: center;
       }
 
       a {
