@@ -1,10 +1,10 @@
 <div class="event">
-  <div class="event-image">
-    <a href="<%= event_path(event) %>"><img src="http://via.placeholder.com/150x150" alt="placeholder"></a>
-  </div>
-  <div class="event-details">
-    <a href="<%= event_path(event) %>"><h4><%= event.name %></h4></a>
-    <p><%= formatted_date(event.date) %></p>
-    <p><%= event.location %></p>
+  <h1><%= event.name %></h1>
+  <p><%= formatted_date(event.date) %>pm</p>
+  <p><%= event.location %></p>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate quidem ullam ab ipsa dignissimos quis aliquam. Aut nihil alias, atque saepe ex eaque velit odio neque, quia cumque eligendi reiciendis?</p>
+  <div class="event-btns">
+    <a href="#">More Info</a>
+    <a href="#">Buy Tickets</a>
   </div>
 </div>

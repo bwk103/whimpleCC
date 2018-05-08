@@ -4,15 +4,11 @@
   section.title {
     height: 600px;
     width: 100%;
-    background: url("card1.jpg");
+    background: linear-gradient(rgba(88, 196, 74, 0.315), rgba(88, 196, 74, 0.315)), url('card1.jpg');
     background-repeat: none;
     background-position: center;
     background-size: cover;
     font-family: 'Montserrat', sans-serif;
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 2;
     display: flex;
     flex-direction: row;
     justify-content: center;
