@@ -3,7 +3,7 @@ $whimple-green: hsl(118, 49%, 29%);
 div#home {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 600px 300px 500px 100px 300px;
+  grid-template-rows: 600px 300px 500px 100px;
   grid-row-gap: 10px;
   font-family: 'Hind', sans-serif;
 
@@ -103,53 +103,6 @@ div#home {
         background: $whimple-green;
         border-radius: 15px;
       }
-    }
-  }
-  section#social-media {
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 4;
-    grid-row-end: 5;
-    background: $whimple-green;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    ul {
-      list-style: none;
-      display: flex;
-      flex-direction: row;
-      align-items: flex-end;
-      justify-content: center;
-
-      li {
-        padding: 0 30px;
-
-        a {
-          color: white;
-          font-size: 45px;
-        }
-      }
-    }
-  }
-  footer {
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 5;
-    grid-row-end: 6;
-    margin-top: -10px;
-    z-index: -1;
-    background: rgb(26, 75, 25);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  
-    p {
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
     }
   }
 }
