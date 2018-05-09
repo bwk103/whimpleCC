@@ -4,7 +4,7 @@
   <p><%= event.location %></p>
   <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate quidem ullam ab ipsa dignissimos quis aliquam. Aut nihil alias, atque saepe ex eaque velit odio neque, quia cumque eligendi reiciendis?</p>
   <div class="event-btns">
-    <a href="#">More Info</a>
+    <%= link_to 'More Info', event_url(event.id) %>
     <a href="#">Buy Tickets</a>
   </div>
 </div>
