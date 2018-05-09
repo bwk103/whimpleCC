@@ -1,7 +1,7 @@
 <%= form_for @event do |f| %>
-  <%= f.text_field :name %>
-  <%= f.date_field :date %>
-  <%= f.text_field :location %>
-  <%= f.text_area :description %>
+  <%= f.text_field :name, placeholder: 'Event name' %>
+  <%= f.date_field :date, placeholder: 'Event date' %>
+  <%= f.text_field :location, placeholder: 'Event location' %>
+  <%= f.text_area :description, placeholder: 'Event description' %>
   <%= f.submit yield(:btn_text) %>
 <% end %>
