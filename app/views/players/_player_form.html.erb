@@ -1,11 +1,9 @@
 <%= form_for @player do |f| %>
-  <%= f.label :first_name, 'First Name:' %>
-  <%= f.text_field :first_name %>
-  <%= f.label :surname, 'Surname:' %>
-  <%= f.text_field :surname %>
-  <%= f.label :email, 'Email:' %>
-  <%= f.email_field :email %>
-  <%= f.label :team, 'Team:' %>
-  <%= f.number_field :team %>
+  <%= f.text_field :first_name, placeholder: 'First Name' %>
+  <%= f.text_field :surname, placeholder: 'Surname' %>
+  <%= f.email_field :email, placeholder: 'Email' %>
+  <%= f.text_field :role, placeholder: 'Team Role' %>
+  <%= f.number_field :team, placeholder: 'Team Number' %>
+  <%= f.text_area :bio, placeholder: 'Bio' %>
   <%= f.submit yield(:btn_text) %>
 <% end %>

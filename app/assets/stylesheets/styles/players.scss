@@ -120,3 +120,110 @@ div#show-player {
     border: 1px solid $whimple-green;
   }
 }
+
+div#new-player {
+  font-family: 'Hind', sans-serif;
+  .title {
+    height: 200px;
+    background: $whimple-green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      align-self: flex-end;
+      font-size: 70px;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      color: white;
+      font-weight: bold;
+      line-height: 63px;
+      border-bottom: 2px solid white;
+    } 
+  }
+  .player-form {
+    padding: 50px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-items: center; 
+  
+    form {
+      display: flex;
+      flex-direction: column;
+
+      input, textarea {
+        margin: 20px auto;
+        height: 30px;
+        width: 50%;
+        // border-radius: 15px;
+        border:1px solid hsl(0, 1%, 63%);
+        text-align: center;      
+      }
+      input[type="submit"] {
+        background-color: $whimple-green;
+        color: white;
+      }
+      input[type="submit"]:hover {
+        cursor: pointer;
+      }
+      textarea {
+        height: 50px;
+      }
+    }
+  }
+}
+div#edit-player {
+  font-family: 'Hind', sans-serif;
+  .title {
+    height: 200px;
+    background: $whimple-green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      align-self: flex-end;
+      font-size: 70px;
+      letter-spacing: 1.5px;
+      font-weight: 700;
+      color: white;
+      font-weight: bold;
+      line-height: 63px;
+      border-bottom: 2px solid white;
+    } 
+  }
+  .player-form {
+    padding: 50px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-items: center; 
+  
+    form {
+      display: flex;
+      flex-direction: column;
+
+      input, textarea {
+        margin: 20px auto;
+        height: 30px;
+        width: 50%;
+        // border-radius: 15px;
+        border:1px solid hsl(0, 1%, 63%);
+        text-align: center;      
+      }
+      input[type="submit"] {
+        background-color: $whimple-green;
+        color: white;
+      }
+      input[type="submit"]:hover {
+        cursor: pointer;
+      }
+      textarea {
+        height: 50px;
+      }
+    }
+  }
+}
