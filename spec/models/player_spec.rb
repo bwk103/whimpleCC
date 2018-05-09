@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Player, type: :model do
   before(:example) do
     @player = Player.new(
-      first_name: 'Ben', surname: 'Kielty', email: 'ben@test.com', team: 1
+      first_name: 'Test', surname: 'McTesty', email: 'test@test.com', team: 1, role: 'Batsman', bio: 'a test'
     )
   end
 
@@ -51,5 +51,35 @@ RSpec.describe Player, type: :model do
     expect(@player).not_to be_valid
     @player.team = 1
     expect(@player).to be_valid
+  end
+
+  it 'players must have a role' do
+    @player.role = nil
+    expect(@player).not_to be_valid
+  end
+
+  it 'players can be a Batsman' do
+    @player.role = 'Batsman'
+    expect(@player).to be_valid
+  end
+
+  it 'players can be a Bowler' do
+    @player.role = 'Bowler'
+    expect(@player).to be_valid
+  end
+
+  it 'players can be a Wicketkeeper' do
+    @player.role = 'Wicketkeeper'
+    expect(@player).to be_valid
+  end
+
+  it 'players can be an All-Rounder' do
+    @player.role = 'All-Rounder'
+    expect(@player).to be_valid
+  end
+
+  it 'players cannot be any other role' do
+    @player.role = 'Specialist Fielder'
+    expect(@player).not_to be_valid
   end
 end

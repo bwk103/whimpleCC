@@ -3,10 +3,7 @@ require 'rails_helper'
 RSpec.describe Bowling, type: :model do
   before(:example) do
     @player = Player.new(
-      first_name: 'Test',
-      surname: 'Player',
-      email: 'test@email.com',
-      team: 1
+      first_name: 'Test', surname: 'McTesty', email: 'test@test.com', team: 1, role: 'Batsman', bio: 'a test'
     )
     @bowl = Bowling.new(
       overs: 10.0,

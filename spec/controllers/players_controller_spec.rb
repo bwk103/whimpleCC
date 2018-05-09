@@ -6,14 +6,18 @@ RSpec.describe PlayersController, type: :controller do
       first_name: 'Henry',
       surname: 'Bowler',
       email: 'henry@test.com',
-      team: 1
+      team: 1,
+      role: 'Bowler',
+      bio: 'Just a test'
     )
 
     @valid_player = {
       first_name: 'James',
       surname: 'Adams',
       email: 'james@test.com',
-      team: 1
+      team: 1,
+      bio: 'Just a working test',
+      role: 'Wicketkeeper'
     }
 
     @invalid_player = {
