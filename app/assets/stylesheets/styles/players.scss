@@ -119,6 +119,22 @@ div#show-player {
     width: 25%;
     border: 1px solid $whimple-green;
   }
+  section.admin-btns {
+    text-align: center;
+    padding: 20px;
+    a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      border: 1px solid $whimple-green;
+      background: $whimple-green;
+      border-radius: 15px;
+    }
+    a.delete-btn {
+      border-color: #e23131;
+      background: #e23131;
+    }
+  }
 }
 
 div#new-player {

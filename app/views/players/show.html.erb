@@ -22,4 +22,8 @@
     <section class="fielding">
         <h1>Fielding Stats</h1>
     </section>
+    <section class="admin-btns">
+        <%= link_to 'Edit Player', edit_player_url(@player), class: 'edit-btn'%>
+        <%= link_to 'Delete Player', '/players/'+ @player.id.to_s, method: 'delete', class: 'delete-btn' %>
+    </section>
 </div>
