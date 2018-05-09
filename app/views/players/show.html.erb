@@ -1,2 +1,25 @@
-<h1>This is the player profile page</h1>
-<h2><%= full_name(@player) %> </h2>
+<div id="show-player">
+    <section class="title">
+    </section>
+    <section class="profile">
+        <img src="http://via.placeholder.com/200x200" alt="">
+        <h1><%= full_name(@player) %></h1>
+        <h3><%= @player.role %> - <%= @player.team %>st Team</h3>
+        <div class="stats">
+            <p><span class="key">Runs: </span>42</p>
+            <p><span class="key">Wickets: </span>12</p>
+            <p><span class="key">Catches: </span>9</p>
+        </div>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores tenetur odit, debitis illo animi iste molestias quisquam totam! Dolorem autem, dicta esse eveniet non quis soluta explicabo pariatur numquam voluptates officia consectetur, quas necessitatibus voluptate ab odio a ipsa veniam cumque aliquid distinctio, natus consequatur commodi. Tempora at exercitationem error.</p>
+        <hr>
+    </section>
+    <section class="batting">
+        <h1>Batting Stats</h1>
+    </section>
+    <section class="bowling">
+        <h1>Bowling Stats</h1>
+    </section>
+    <section class="fielding">
+        <h1>Fielding Stats</h1>
+    </section>
+</div>

@@ -68,3 +68,55 @@
     }
   }
 }
+
+div#show-player {
+  font-family: 'Hind', sans-serif;
+
+  section.title {
+    height: 600px;
+    background: linear-gradient(rgba(88, 196, 74, 0.315), rgba(88, 196, 74, 0.315)), url('background-whimple.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+
+  section.profile {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    h3 {
+      font-size: 24px;
+    }
+    img {
+      border-radius: 50%;
+      border: 5px solid $whimple-green;
+    }
+    p {
+      font-size: 18px;
+      padding-top: 0px;
+      width: 50%;
+      text-align: center;
+    }
+
+    div.stats {
+      display: flex;
+      flex-direction: row;
+      width: 50%;
+      align-content: center;
+      p {
+        width: 100%;
+        text-align: center;
+      }
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+  hr {
+    width: 25%;
+    border: 1px solid $whimple-green;
+  }
+}
