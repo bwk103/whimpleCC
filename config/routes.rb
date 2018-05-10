@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :clubs
   resources :events
   resources :sponsors
+  resources :fixtures
 end
