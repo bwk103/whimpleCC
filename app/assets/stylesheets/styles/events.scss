@@ -165,3 +165,49 @@ div#edit-event {
   }
 }
 
+div#show-event {
+  font-family: 'Hind', sans-serif;
+
+  section.title {
+    height: 600px;
+    background: linear-gradient(rgba(88, 196, 74, 0.315), rgba(88, 196, 74, 0.315)), url('background-whimple.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+  section.event-heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section.event-description {
+    display: none;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-size: 18px;
+      width: 70%;
+      text-align: center;
+    }
+  }
+
+  section.event-btns {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    a {
+      margin: 10px;
+      text-decoration: none;
+      color: white;
+      padding: 10px;
+      border: 1px solid $whimple-green;
+      background: $whimple-green;
+      border-radius: 15px;
+    }
+  }
+}
+

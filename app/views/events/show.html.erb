@@ -1,7 +1,19 @@
 <% provide(:title, @event.name) %>
-<div>
-  <h1><%= @event.name %></h1>
-  <h2><%= formatted_date(@event.date) %></h2>
-  <h2><%= @event.location %></h2>
-  <p><%= @event.description %></p>
+
+<div id="show-event">
+    <section class="title">
+    </section>
+    <section class="event-heading">
+      <h1><%= @event.name %></h1>
+      <h2><%= formatted_date(@event.date) %>pm</h2>
+      <h2><%= @event.location %></h2>
+    </section>
+    <section class="event-description">
+      <p><%=@event.description%></p>
+    </section>
+    <section class="event-btns">
+      <%= link_to('Buy Tickets', '#') %>
+      <%= link_to('Edit Event', edit_event_url(@event))%>
+      <%= link_to('Delete Event', '/events/' + @event.id.to_s, method: 'delete', class: 'edit-btn')%>
+    </section>
 </div>

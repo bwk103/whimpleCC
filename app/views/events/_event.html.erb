@@ -2,7 +2,7 @@
   <h1><%= event.name %></h1>
   <p><%= formatted_date(event.date) %>pm</p>
   <p><%= event.location %></p>
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate quidem ullam ab ipsa dignissimos quis aliquam. Aut nihil alias, atque saepe ex eaque velit odio neque, quia cumque eligendi reiciendis?</p>
+  <p><%= event.description.truncate(300, separator: ' ') %></p>
   <div class="event-btns">
     <%= link_to 'More Info', event_url(event.id) %>
     <a href="#">Buy Tickets</a>

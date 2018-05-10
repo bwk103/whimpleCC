@@ -35,6 +35,8 @@ class EventsController < ApplicationController
 
   def destroy
     Event.find(params[:id]).destroy
+    redirect_to events_url
+
   end
 
   private
