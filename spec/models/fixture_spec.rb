@@ -16,4 +16,26 @@ RSpec.describe Fixture, type: :model do
   it 'can be valid' do
     expect(@fixture).to be_valid
   end
+
+  describe 'must have' do
+    it 'an opponent' do
+      @fixture.opponent = nil
+      expect(@fixture).not_to be_valid
+    end
+
+    it 'a location' do
+      @fixture.location = nil
+      expect(@fixture).not_to be_valid
+    end
+
+    it 'a date' do
+      @fixture.date = nil
+      expect(@fixture).not_to be_valid
+    end
+
+    it 'a time' do
+      @fixture.time = nil
+      expect(@fixture).not_to be_valid
+    end
+  end
 end
