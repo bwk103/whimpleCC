@@ -1,0 +1,31 @@
+<section class="fixture">
+    <div class="details">
+        <p>Tolchards Devon Cricket League C Division East on <%= fixture.date.strftime('%e %B %Y')%> at <%= fixture.location %></p>
+    </div>
+    <div class="teams">
+        <div id="home-team" class="team">
+        <img src="http://via.placeholder.com/100x100" alt="">
+        <div class="text">
+            <h2>Whimple CC</h2>
+            <% if fixture.result %>
+                <p><%= fixture.whimple_score%></p>
+            <% end %>
+        </div>
+    </div>
+    <div id="away-team" class="team">
+        <img src="http://via.placeholder.com/100x100" alt="">
+        <div class="text">
+            <h2><%= fixture.opponent %></h2>
+            <% if fixture.result %>
+                <p><%= fixture.opponent_score%></p>
+            <% end %> 
+        </div>  
+    </div>
+</div>
+<% if fixture.result %>
+    <div class="result">
+        <p><%= fixture.result%></p>
+    </div>
+<% end %>
+</section>
+

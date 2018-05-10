@@ -1,0 +1,89 @@
+div#show-fixtures {
+    font-family: 'Hind', sans-serif;
+
+    section.title {
+        height: 600px;
+        background: linear-gradient(rgba(88, 196, 74, 0.315), rgba(88, 196, 74, 0.315)), url('background-fixtures.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        
+        h1 {
+            padding-top: 180px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 70px;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            color: white;
+            font-weight: bold;
+            line-height: 63px;
+            border-bottom: 2px solid white; 
+          }
+    }
+    section.fixture-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .fixture:nth-of-type(odd) {
+            background: white;
+        }
+    
+        section.fixture {
+            height: 180px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding-bottom: 10px;
+            background: hsla(0, 0%, 89%, 0.521);
+        }
+
+        .teams {
+            display: flex;
+            flex-direction: row;
+        
+            .team {
+                width: 50%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                
+
+                img {
+                    border-radius: 50%;
+                }
+
+                .text {
+                    padding-left: 10px;
+                    align-self: flex-start;
+
+                    h2{
+                        font-size: 30px;
+                    }
+                    p {
+                        font-size: 22px;
+                    }
+                }
+            }
+            div#away-team {
+                justify-content: flex-start;
+            }
+
+        }
+        .details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .result {
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+}
