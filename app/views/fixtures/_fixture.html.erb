@@ -4,7 +4,7 @@
     </div>
     <div class="teams">
         <div id="home-team" class="team">
-        <img src="http://via.placeholder.com/100x100" alt="">
+        <%= image_tag 'whimple-logo.svg'%>
         <div class="text">
             <h2>Whimple CC</h2>
             <% if fixture.result %>
@@ -12,8 +12,10 @@
             <% end %>
         </div>
     </div>
+    <div class="space">
+    </div>
     <div id="away-team" class="team">
-        <img src="http://via.placeholder.com/100x100" alt="">
+        <%= image_tag 'logo-2.svg'%>
         <div class="text">
             <h2><%= fixture.opponent %></h2>
             <% if fixture.result %>
