@@ -8,6 +8,7 @@
       <h1>Players</h1>
     </div>
   </section>
+  <%= render 'shared/flash' %>
   <div class="player-list">
     <% @players.each do | player | %>
       <%= render 'player', { player: player } %>

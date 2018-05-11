@@ -106,13 +106,21 @@ section#social-media {
   }
 }
 
-div.flash-notice {
+div.flash {
   margin: auto;
+  min-height: 30px;
   margin-top: 10px;
-  font-size: 20px;
-  height: 30px;
+  font-size: 15px;
   font-family: 'Hind', sans-serif;
   width: 75%;
   text-align: center;
+}
+
+div.flash-notice {
+  
   color: $whimple-green;
+}
+
+div.flash-alert {
+  color: red;
 }
