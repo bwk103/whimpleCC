@@ -10,7 +10,7 @@ RSpec.feature 'Navbar navigation', type: :feature do
     expect(page).to have_link('More')
   end
 
-  scenario 'User can navigate to /players' do
+  scenario 'User can navigate to players' do
     visit '/'
     expect(page).to have_link('Players')
     click_link 'Players'
