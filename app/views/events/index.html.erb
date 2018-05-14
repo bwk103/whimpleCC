@@ -5,9 +5,11 @@
      <h1>Events</h1>
   </section>
   <%= render 'shared/flash' %>
-  <section class="event-list">
-    <% @events.each do | event | %>
-      <%= render 'event', { event: event } %>
-    <% end %>
-  </section>
+  <% if @events %>
+    <section class="event-list">
+      <% @events.each do | event | %>
+        <%= render 'event', { event: event } %>
+      <% end %>
+    </section>
+  <% end %>
 </div>

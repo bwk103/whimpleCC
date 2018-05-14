@@ -9,9 +9,11 @@
     </div>
   </section>
   <%= render 'shared/flash' %>
-  <div class="player-list">
-    <% @players.each do | player | %>
-      <%= render 'player', { player: player } %>
-    <% end %>
-  </div>
+  <% if @players %>
+    <div class="player-list">
+      <% @players.each do | player | %>
+        <%= render 'player', { player: player } %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

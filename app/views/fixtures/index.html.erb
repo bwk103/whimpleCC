@@ -2,9 +2,11 @@
     <section class="title">
         <h1>Fixtures & Results</h1>
     </section>
-    <section class="fixture-list">
-        <% @fixtures.each do | fixture | %>
-            <%= render 'fixture', { fixture: fixture } %>
-        <% end %>
-  </section>
+    <% if @fixtures %>
+        <section class="fixture-list">
+            <% @fixtures.each do | fixture | %>
+                <%= render 'fixture', { fixture: fixture } %>
+            <% end %>
+        </section>
+    <% end %>
 </div>
