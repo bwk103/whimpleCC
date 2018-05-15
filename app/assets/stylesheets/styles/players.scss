@@ -181,8 +181,15 @@ div#new-player {
         background-color: $whimple-green;
         color: white;
       }
+      input[type="radio"] {
+        height: 15px;
+        width: 15px;
+      }
       input[type="submit"]:hover {
         cursor: pointer;
+      }
+      label {
+        text-align: center;
       }
       textarea {
         height: 50px;

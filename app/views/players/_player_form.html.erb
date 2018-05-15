@@ -2,7 +2,14 @@
   <%= f.text_field :first_name, placeholder: 'First Name' %>
   <%= f.text_field :surname, placeholder: 'Surname' %>
   <%= f.email_field :email, placeholder: 'Email' %>
-  <%= f.text_field :role, placeholder: 'Team Role' %>
+  <%= radio_button_tag(:role, "Batsman") %>
+  <%= label_tag(:role_batsman, "Batsman") %>
+  <%= radio_button_tag(:role, "Bowler") %>
+  <%= label_tag(:role_bowler, "Bowler") %>
+  <%= radio_button_tag(:role, "All-Rounder") %>
+  <%= label_tag(:role_all_rounder, "All-Rounder") %>
+  <%= radio_button_tag(:role, "Wicketkeeper") %>
+  <%= label_tag(:role_wicketkeeper, "Wicketkeeper") %>
   <%= f.number_field :team, placeholder: 'Team Number' %>
   <%= f.text_area :bio, placeholder: 'Bio' %>
   <%= f.submit yield(:btn_text) %>
