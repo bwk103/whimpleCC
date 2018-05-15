@@ -28,6 +28,6 @@ RSpec.describe FixturesController, type: :controller do
 
         it 'renders the index view' do
             expect(response).to render_template 'index'
-        end
+        end        
     end
 end
