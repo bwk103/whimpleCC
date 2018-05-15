@@ -16,6 +16,3 @@ tom = Player.create!(first_name: 'Tom',
                      team: 1,
                      role: "Wicketkeeper",
                      bio: "This is a test bio")
-
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)

@@ -1,0 +1,7 @@
+<%= form_for @fixture do |f| %>
+  <%= f.text_field :opponent, placeholder: 'Opponent' %>
+  <%= f.text_field :location, placeholder: 'Location' %>
+  <%= date_select :fixture, :match_start, { order: [:day, :month, :year] } %>
+  <%= time_select :fixture, :match_start %>
+  <%= f.submit yield(:btn_text) %>
+<% end %>
