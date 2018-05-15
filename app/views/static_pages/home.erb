@@ -5,10 +5,8 @@
       </div>
     </section>
     <section id="next-game">
-      <h2>Next Fixture</h2>
-      <h4>Whimple CC vs <%= @fixture.opponent %></h4>
-      <h4><%= @fixture.location %></h4>
-      <h4><%= @fixture.date %> - <%= @fixture.time %></h4>
+    <h2>Next Fixture</h2>
+      <%= render 'fixtures/fixture', { fixture: @fixture } %>
     </section>
     <section id="about">
       <h2>Want to get involved?</h2>
