@@ -5,8 +5,7 @@ RSpec.describe Fixture, type: :model do
     @fixture = Fixture.new(
       opponent: 'Other CC',
       location: 'Knowles Cross',
-      date: Date.new,
-      time: Time.new,
+      match_start: DateTime.now,
       result: nil,
       whimple_score: nil,
       opponent_score: nil
@@ -28,13 +27,8 @@ RSpec.describe Fixture, type: :model do
       expect(@fixture).not_to be_valid
     end
 
-    it 'a date' do
-      @fixture.date = nil
-      expect(@fixture).not_to be_valid
-    end
-
-    it 'a time' do
-      @fixture.time = nil
+    it 'a match_start time' do
+      @fixture.match_start = nil
       expect(@fixture).not_to be_valid
     end
   end

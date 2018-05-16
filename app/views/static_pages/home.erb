@@ -4,10 +4,12 @@
         <h1>Whimple Cricket Club</h1>
       </div>
     </section>
-    <section id="next-game">
-    <h2>Next Fixture</h2>
-      <%= render 'fixtures/fixture', { fixture: @fixture } %>
-    </section>
+    <% if @fixture %>
+      <section id="next-game">
+      <h2>Next Fixture</h2>
+        <%= render 'fixtures/fixture', { fixture: @fixture } %>
+      </section>
+    <% end %>
     <section id="about">
       <h2>Want to get involved?</h2>
       <p id="head">If you're interested in joining the club as a player, a social member or by registering your child to attend youth sessions, please get in touch or come along on a Friday night.</p>
