@@ -12,6 +12,7 @@ class PlayersController < ApplicationController
   end
 
   def create
+    p params
     @player = Player.new(player_params)
     if @player.save
       flash[:notice] = "Player successfully created"
