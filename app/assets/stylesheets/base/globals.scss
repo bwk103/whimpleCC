@@ -1,56 +1,64 @@
 $navbar-link-colour :rgba(255, 255, 255, 0.98);
 $whimple-green: hsl(118, 49%, 29%);
 
-nav {
+.navbar {
   position: absolute;
+  min-width: 100%;
   z-index: 2;
   top: 0;
   left:0;
   right:0;
   bottom:0;
-  grid-column-start: 1;
-  grid-column-end: 6;
-  grid-row-start: 1;
-  grid-row-end: 2;
   font-family: 'Hind', sans-serif;
-  display: flex;
-  flex-direction: row;
   height: 72px;
+  padding: 5px 0;
   background-color: rgba(213, 213, 213, 0);
-  align-items: center;
-  justify-content: space-around;
   text-transform: uppercase;
-  z-index: 2;
-  .logo {
-    font-weight: 300;
-    font-size: 1.5em;
-    letter-spacing: 2px;
-    text-shadow: 0px 1px rgb(156, 156, 156);
-  }
-  ul {
-    list-style: none;
-    li {
-      display: inline;
+
+  .wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .logo {
+      display: inline-block;
+
       a {
-        letter-spacing: 1px;
-        margin-left: 50px;
-      }
-      a:hover {
-        line-height: 1.2px;
-        text-decoration: underline;
+        font-weight: 300;
+        font-size: 1.5em;
+        letter-spacing: 2px;
+        text-shadow: 0px 1px rgb(156, 156, 156);
       }
     }
-  }
 
-  a {
-    text-decoration: none;
-    color: $navbar-link-colour;
-  }
-}
+    ul {
+      display: flex;
+      list-style: none;
+    
+      li {
+        display: inline;
+        a {
+          letter-spacing: 1px;
+          margin-left: 50px;
+        }
+        a:hover {
+          line-height: 1.2px;
+          text-decoration: underline;
+        }
+      }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
+      li.menu-btn {
+        display: none;
+      }
+    }
+  
+    a {
+      text-decoration: none;
+      color: $navbar-link-colour;
+    }
+  }
 }
 
 footer {
@@ -123,4 +131,38 @@ div.flash-notice {
 
 div.flash-alert {
   color: red;
+}
+
+li.display-mobile {
+  display: block;
+  height: 50px;
+}
+
+@media only screen and (max-width: 770px) {
+
+  nav.navbar {
+    .wrapper {
+      flex-wrap: wrap;
+      .logo {
+        padding-top: 12px;
+        align-self: center;
+        width: 100%;
+        text-align: center;
+      }
+      .nav-links {
+          padding-left: 0px!important;
+        li {
+          padding-left: 0px;
+          display: none;
+          a {
+            font-size: 2em;
+            margin-left: 0px;
+          }
+        }
+        li.menu-btn {
+          display: block;
+        }
+      }
+    }
+  }
 }
