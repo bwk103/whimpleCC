@@ -5,6 +5,8 @@
   <p><%= event.description.truncate(300, separator: ' ') %></p>
   <div class="event-btns">
     <%= link_to 'More Info', event_url(event.id) %>
-    <a href="#">Buy Tickets</a>
+    <% if event.ticketed %>
+      <a href="#">Buy Tickets</a>
+    <% end %>
   </div>
 </div>
