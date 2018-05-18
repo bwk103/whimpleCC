@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/sponsors', to: 'sponsors#index'
   get '/players', to: 'players#index'
   get '/events', to: 'events#index'
+  get '/signup', to: 'users#new'
+  get '/users', to: 'users#create'
   resources :players
   resources :clubs
   resources :events
