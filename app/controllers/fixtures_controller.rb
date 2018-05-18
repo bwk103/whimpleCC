@@ -1,5 +1,7 @@
 class FixturesController < ApplicationController
 
+    before_action :authorize, only: [:new, :create]
+
     def index
         @fixtures = Fixture.all.order('match_start')
     end

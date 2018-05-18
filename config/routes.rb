@@ -7,10 +7,14 @@ Rails.application.routes.draw do
   get '/players', to: 'players#index'
   get '/events', to: 'events#index'
   get '/signup', to: 'users#new'
-  get '/users', to: 'users#create'
+  post '/users', to: 'users#create'
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
   resources :players
   resources :clubs
   resources :events
   resources :sponsors
   resources :fixtures
+  resources :users
 end
