@@ -1,4 +1,5 @@
-$whimple-green: hsl(118, 49%, 29%);
+$whimple-green: rgb(40, 110, 37);
+$subheading: #286e26;
 
 div#home {
   display: grid;
@@ -8,7 +9,7 @@ div#home {
   font-family: 'Hind', sans-serif;
 
   section.title {
-    background: url("background.jpg");
+    background: linear-gradient(rgba(88, 196, 74, 0.315), rgba(88, 196, 74, 0.315)), url('background.jpg');
     background-repeat: none;
     background-size: cover;
     background-position: center;
@@ -207,17 +208,35 @@ div#history {
     }
   }
 
+  div.content-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+
+  .shadow {
+    -webkit-box-shadow: 1px 5px 4px 5px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+    -moz-box-shadow:    1px 5px 4px 5px #ccc;  /* Firefox 3.5 - 3.6 */
+    box-shadow:         1px 5px 4px 5px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  }
+
   section.club {
     padding: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-around;
+
 
     .details {
-      padding-left: 20px;
+      width: 50%;
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      h1 {
+        color: $subheading;
+      }
       
       p {
         font-size: 18px;
@@ -230,31 +249,75 @@ div#history {
     padding: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    background: linear-gradient(rgba(88, 196, 74, 0.315), rgba(29, 65, 24, 0.314)), url('background-events.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
     .details {
-      padding-right: 20px;
+      color: white;
+      width: 50%;
       display: flex;
       flex-direction: column;
       align-items: center;
-
+      h1 {
+        margin-left: auto;
+      }
       p {
         font-size: 18px;
-        text-align: center;
+        text-align: right;
       }
     }
   }
 
-  section.honours {
-    padding: 20px;
-    h1 {
-      text-align: center;
-    }
-
-    .boards {
+  section.whiteways {
+    font-family: 'Hind', sans-serif;
+    div.details {
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      align-items: space-between;
+    }
+    div.text {
+      width: 50%;
+      padding-left: 20px;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      h1 {
+        color: $subheading;
+      }
+      p {
+        font-size: 18px;
+        text-align: left;
+      }
+    }
+    img {
+      height: 40%;
+      width: 50%;
+    }
+  }
+  section.knowle-cross {
+    color: white;
+    font-family: 'Hind', sans-serif;
+    height: 300px;
+    background: linear-gradient(rgba(88, 196, 74, 0.315), rgba(29, 65, 24, 0.314)), url('knowle-cross.jpg');
+    background-position: center;
+    background-size: cover;
+    div.details {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      h1 {
+        color: white;
+        display: block;
+        text-align: center;
+      }
+      p {
+        padding-left: 20px;
+        font-size: 16px;
+        text-align: center;
+      }
     }
   }
 }

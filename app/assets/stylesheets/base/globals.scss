@@ -20,7 +20,7 @@ $whimple-green: hsl(118, 49%, 29%);
     max-width: 1200px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 
     .logo {
       display: inline-block;
@@ -42,6 +42,7 @@ $whimple-green: hsl(118, 49%, 29%);
         a {
           letter-spacing: 1px;
           margin-left: 50px;
+          font-size: 1em;
         }
         a:hover {
           line-height: 1.2px;
