@@ -12,13 +12,13 @@ class StaticPagesController < ApplicationController
   def ground
   end
 
-  private 
+  private
 
   def next_fixture
     fixtures = Fixture.all
     current_time = DateTime.now
     p current_time
     future_fixtures = fixtures.select { |fixture| fixture.match_start > current_time }
-    return future_fixtures.sort_by! { |fixture| fixture.match_start }[0]
+    future_fixtures.sort_by!(&:match_start)[0]
   end
 end

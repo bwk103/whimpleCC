@@ -1,10 +1,8 @@
 class ClubsController < ApplicationController
-
-  def index
-  end
+  def index; end
 
   def new
-    @club = Club.new()
+    @club = Club.new
   end
 
   def create
@@ -18,10 +16,9 @@ class ClubsController < ApplicationController
     end
   end
 
-
   private
 
   def club_params
-    params.require(:club).permit(:name, :ground, :lat, :lng )
+    params.require(:club).permit(:name, :ground, :lat, :lng)
   end
 end

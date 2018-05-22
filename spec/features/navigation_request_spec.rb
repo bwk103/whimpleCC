@@ -3,14 +3,14 @@ require 'rails_helper'
 RSpec.feature 'Navbar navigation', type: :feature do
   before(:each) do
     Fixture.create!(
-        opponent: 'Another CC',
-        location: 'Knowle Cross',
-        match_start: DateTime.now,
-        result: nil,
-        whimple_score: nil,
-        opponent_score: nil
+      opponent: 'Another CC',
+      location: 'Knowle Cross',
+      match_start: DateTime.now,
+      result: nil,
+      whimple_score: nil,
+      opponent_score: nil
     )
-end
+  end
 
   scenario 'User can see navbar' do
     visit '/'

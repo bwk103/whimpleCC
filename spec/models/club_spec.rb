@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Club, type: :model do
   before(:each) do
-    @club = Club.new(name: "Cricket Club",
-                     ground: "Cricket Ground",
+    @club = Club.new(name: 'Cricket Club',
+                     ground: 'Cricket Ground',
                      lat: nil,
                      lng: nil)
   end

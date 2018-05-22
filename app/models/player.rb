@@ -12,5 +12,5 @@ class Player < ApplicationRecord
     less_than_or_equal_to: 2
   }
   permitted_roles = ['Batsman', 'Bowler', 'All-Rounder', 'Wicketkeeper']
-  validates :role, presence: true, inclusion: { in: permitted_roles } 
+  validates :role, presence: true, inclusion: { in: permitted_roles }
 end

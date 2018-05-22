@@ -14,7 +14,7 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new(player_params)
     if @player.save
-      flash[:notice] = "Player successfully created"
+      flash[:notice] = 'Player successfully created'
       redirect_to @player
     else
       flash[:alert] = @player.errors.full_messages
@@ -29,7 +29,7 @@ class PlayersController < ApplicationController
   def update
     @player = Player.find(params[:id])
     if @player.update_attributes(player_params)
-      flash[:notice] = "Player successfully updated"
+      flash[:notice] = 'Player successfully updated'
       redirect_to @player
     else
       flash[:alert] = @player.errors.full_messages
@@ -39,7 +39,7 @@ class PlayersController < ApplicationController
 
   def destroy
     Player.find(params[:id]).destroy
-    flash[:notice] = "Player successfully deleted"
+    flash[:notice] = 'Player successfully deleted'
     redirect_to players_url
   end
 

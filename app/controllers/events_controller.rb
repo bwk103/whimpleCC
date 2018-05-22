@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-
   before_action :check_admin, only: [:new, :edit, :destroy]
   def index
     @events = Event.all.order('date')
@@ -12,7 +11,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      flash[:notice] = "Event created successfully"
+      flash[:notice] = 'Event created successfully'
       redirect_to @event
     else
       flash[:alert] = @event.errors.full_messages
@@ -31,7 +30,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     if @event.update_attributes(event_params)
-      flash[:notice] = "Event updated successfully"
+      flash[:notice] = 'Event updated successfully'
       redirect_to @event
     else
       flash[:alert] = @event.errors.full_messages
@@ -41,9 +40,8 @@ class EventsController < ApplicationController
 
   def destroy
     Event.find(params[:id]).destroy
-    flash[:notice] = "Event deleted successfully"
+    flash[:notice] = 'Event deleted successfully'
     redirect_to events_url
-
   end
 
   private
