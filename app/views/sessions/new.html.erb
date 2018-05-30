@@ -1,4 +1,4 @@
-<div id="login" class="admin-only">
+<div id="login" class="admin-only admin-form">
   <div class="admin-navbar">
   </div>
   <section class="form">
@@ -8,15 +8,16 @@
     </div>
     <div class="form-group">
       <%= f.label :username, 'Username:' %>
-      <%= f.text_field :username %>
+      <%= f.text_field :username, autocomplete: 'off' %>
     </div>
     <div class="form-group">
       <%= f.label :password, 'Password:'%>
       <%= f.password_field :password %>
     </div>
     <div class="form-group">
-        <%= f.submit :Submit, class: 'btn' %>
+        <%= f.submit 'Login', class: 'btn' %>
       </div>
     <% end %>
+    <p>Not registered? <%= link_to 'Signup here', new_user_url %></p>
   </section>
 </div>
