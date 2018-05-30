@@ -2,31 +2,10 @@
   font-family: 'Hind', sans-serif;
 
   section.title {
-    height: 600px;
-    width: 100%;
     background: linear-gradient(rgba(88, 196, 74, 0.315), rgba(88, 196, 74, 0.315)), url('card1.jpg');
     background-repeat: none;
     background-position: center;
     background-size: cover;
-    font-family: 'Montserrat', sans-serif;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
-    div.description {
-      align-self: center;
-
-      h1 {
-        align-self: center;
-        font-size: 70px;
-        letter-spacing: 1.5px;
-        font-weight: 700;
-        color: white;
-        font-weight: bold;
-        line-height: 63px;
-        border-bottom: 2px solid white;
-      } 
-    }
   }
 
   div.player-list {
@@ -73,7 +52,6 @@ div#show-player {
   font-family: 'Hind', sans-serif;
 
   section.title {
-    height: 600px;
     background: linear-gradient(rgba(88, 196, 74, 0.315), rgba(88, 196, 74, 0.315)), url('background-whimple.jpg');
     background-position: center;
     background-size: cover;

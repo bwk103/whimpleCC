@@ -1,19 +1,19 @@
-$whimple-green: rgb(40, 110, 37);
-$subheading: #286e26;
+body {
+  font-family: $body-font;
+}
 
 div#home {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 600px 300px 300px 500px 100px;
   grid-row-gap: 10px;
-  font-family: 'Hind', sans-serif;
 
   section.title {
-    background: linear-gradient(rgba(88, 196, 74, 0.315), rgba(88, 196, 74, 0.315)), url('background.jpg');
+    background: linear-gradient($background-overlay, $background-overlay), url('background.jpg');
     background-repeat: none;
     background-size: cover;
     background-position: center;
-    font-family: 'Montserrat', sans-serif;
+    font-family: $title-font;
     grid-column-start: 1;
     grid-column-end: 6;
     grid-row-start: 1;
@@ -51,6 +51,7 @@ div#home {
     justify-content: center;
 
     h2 {
+      color: $whimple-green;
       font-size: 40px;
       margin-bottom: 0px;
     }
@@ -65,6 +66,7 @@ div#home {
       background: white;
 
       .details {
+        color: $whimple-green;
         text-align: center;
       }
       .result {
@@ -110,6 +112,22 @@ div#home {
           justify-content: flex-start;
       }
     }
+
+    a {
+      color: $whimple-green;
+      background: white;
+      text-decoration: none;
+      padding: 10px;
+      border: 2px solid $whimple-green;
+      border-radius: 15px;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    a:hover {
+      background: $whimple-green;
+      color: white;
+    }
   }
 
   section#about {
@@ -122,24 +140,42 @@ div#home {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: $whimple-green;
 
-    h2 {
-      font-size: 40px;
-    }
+    div.container {
+      max-width: 1200px;
 
-    p {
-      text-align: center;
-      width: 50%;
-      font-size: 18px;
-    }
-
-    a {
-      color: white;
-      background: $whimple-green;
-      text-decoration: none;
-      padding: 10px;
-      border: 2px solid $whimple-green;
-      border-radius: 15px;
+      div.details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 5px;
+        h2 {
+          color: white;
+          font-size: 40px;
+        }
+    
+        p {
+          color: white;
+          text-align: center;
+          font-size: 18px;
+        }
+    
+        a {
+          color: white;
+          background: $whimple-green;
+          text-decoration: none;
+          padding: 10px;
+          border: 2px solid white;
+          border-radius: 15px;
+          padding-bottom: 10px;
+          font-size: 18px;
+        }
+        a:hover {
+          background: white;
+          color: $whimple-green;
+        }
+      }
     }
   }
   section#links {
@@ -161,8 +197,8 @@ div#home {
       justify-content: center;
 
       img {
-        height: 70%;
-        width: 70%;
+        height: 50%;
+        width: 50%;
       }
 
       p {
@@ -184,28 +220,11 @@ div#home {
 }
 
 div#history {
-  font-family: 'Hind', sans-serif;
 
   section.title {
     background: linear-gradient(rgba(88, 196, 74, 0.315), rgba(88, 196, 74, 0.315)), url('background-history.jpg');
     background-size: cover;
     background-position: center;
-    height: 600px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
-    h1 {
-      padding-top: 200px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 70px;
-      letter-spacing: 1.5px;
-      font-weight: 700;
-      color: white;
-      font-weight: bold;
-      line-height: 63px;
-      border-bottom: 2px solid white;
-    }
   }
 
   div.content-container {
@@ -235,7 +254,7 @@ div#history {
       align-items: center;
 
       h1 {
-        color: $subheading;
+        color: $whimple-green;
       }
       
       p {
@@ -272,7 +291,6 @@ div#history {
   }
 
   section.whiteways {
-    font-family: 'Hind', sans-serif;
     div.details {
       display: flex;
       flex-direction: row;
@@ -285,7 +303,7 @@ div#history {
       align-items: flex-start;
       flex-direction: column;
       h1 {
-        color: $subheading;
+        color: $whimple-green;
       }
       p {
         font-size: 18px;
@@ -299,7 +317,6 @@ div#history {
   }
   section.knowle-cross {
     color: white;
-    font-family: 'Hind', sans-serif;
     min-height: 300px;
     background: linear-gradient(rgba(88, 196, 74, 0.315), rgba(29, 65, 24, 0.314)), url('knowle-cross.jpg');
     background-position: center;

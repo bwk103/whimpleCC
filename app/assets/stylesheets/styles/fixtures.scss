@@ -2,25 +2,9 @@ div#show-fixtures {
     font-family: 'Hind', sans-serif;
 
     section.title {
-        height: 600px;
         background: linear-gradient(rgba(88, 196, 74, 0.315), rgba(88, 196, 74, 0.315)), url('background-fixtures.jpg');
         background-size: cover;
         background-position: center;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        
-        h1 {
-            padding-top: 180px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 70px;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            color: white;
-            font-weight: bold;
-            line-height: 63px;
-            border-bottom: 2px solid white; 
-          }
     }
     section.fixture-list {
         display: flex;
