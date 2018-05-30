@@ -6,6 +6,26 @@ div#events-index {
     background-position: center;
   }
 
+  section.admin-btns {
+    height: 60px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div.add-event {
+      padding-top: 10px;
+    }
+      a {
+        color: white;
+        background: $whimple-green;
+        text-decoration: none;
+        padding: 10px;
+        margin: 10px;
+        border: 2px solid $whimple-green;
+        border-radius: 15px;
+      }
+  }
+
   section.event-list {
     padding: 10px;
     display: grid;

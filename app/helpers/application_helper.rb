@@ -11,4 +11,9 @@ module ApplicationHelper
   def formatted_date(datetime)
     datetime.strftime('%e %B %Y at %I:%M')
   end
+
+  def is_logged_in?
+    p 'hello'
+    current_user && current_user.admin?
+  end
 end
