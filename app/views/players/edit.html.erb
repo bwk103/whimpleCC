@@ -1,11 +1,12 @@
-<% provide(:btn_text, 'Edit Player') %>
+<% provide(:form_title, 'Edit Player') %>
+<% provide(:form_url, '/players/' + @player.id.to_s) %>
 
-<div id="edit-player">
-    <section class="title">
-    <h1>Edit Player</h1>
-    </section>
-    <%= render 'shared/flash' %>
-    <section class="player-form">
-        <%= render 'player_form' %>
-    </section>
+
+<div id="new-player" class="admin-only admin-form">
+  <div class="admin-navbar">
+  </div>
+  <%= render 'shared/flash' %>
+  <section class="form">
+    <%= render 'player_form' %>
+  </section>
 </div>

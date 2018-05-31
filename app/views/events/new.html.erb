@@ -1,31 +1,13 @@
+<% provide(:form_title, 'New Event') %>
+<% provide(:form_url, '/events/') %>
+
+
 <div id="new-event" class="admin-only admin-form">
   <div class="admin-navbar">
   </div>
+  <%= render 'shared/flash' %>
   <section class="form">
-    <%= form_for @event, url: '/events' do |f| %>
-      <div class="form-header">
-        <h2>New Event</h2>
-      </div>
-      <div class="form-group">
-        <%= f.label :name, 'Name:' %>
-        <%= f.text_field :name, autocomplete: 'off' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :date, 'Date:' %>
-        <%= f.date_field :date %>
-      </div>
-      <div class="form-group">
-        <%= f.label :location, 'Location:' %>
-        <%= f.text_field :location, autocomplete: 'off' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :description, 'Description:' %>
-        <%= f.text_area :description, rows: 10 %>
-      </div>
-      <div class="form-group">
-          <%= f.submit 'Create Event', class: 'btn' %>
-      </div>
-    <% end %>
+    <%= render 'event_form' %>
   </section>
 </div>
 

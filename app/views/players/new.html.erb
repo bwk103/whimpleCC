@@ -1,38 +1,11 @@
+<% provide(:form_title, 'Add Player') %>
+<% provide(:form_url, '/players') %>
+
 <div id="new-player" class="admin-only admin-form">
   <div class="admin-navbar">
   </div>
+  <%= render 'shared/flash' %>
   <section class="form">
-    <%= form_for @player, url: '/players' do |f| %>
-      <div class="form-header">
-        <h2>Add Player</h2>
-      </div>
-      <div class="form-group">
-        <%= f.label :first_name, 'First name:' %>
-        <%= f.text_field :first_name, autocomplete: 'off' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :surname, 'Last name:' %>
-        <%= f.text_field :surname, autocomplete: 'off' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :email, 'Email address:' %>
-        <%= f.email_field :email, autocomplete: 'off' %>
-      </div>
-      <div class="form-group">
-        <%= f.label :role, 'Team role:' %>
-        <%= f.select :role, ['Batsman', 'Bowler', 'All-Rounder', 'Wicketkeeper'] %>
-      </div>
-      <div class="form-group">
-        <%= f.label :team, 'Team number:' %>
-        <%= f.number_field :team %>
-      </div>
-      <div class="form-group">
-        <%= f.label :bio, 'Player Bio:' %>
-        <%= f.text_area :bio, rows: 10 %>
-      </div>
-      <div class="form-group">
-          <%= f.submit 'Add Player', class: 'btn' %>
-      </div>
-    <% end %>
+    <%= render 'player_form' %>
   </section>
 </div>

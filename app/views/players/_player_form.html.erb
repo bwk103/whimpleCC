@@ -1,16 +1,32 @@
-<%= form_for @player do |f| %>
-  <%= f.text_field :first_name, placeholder: 'First Name' %>
-  <%= f.text_field :surname, placeholder: 'Surname' %>
-  <%= f.email_field :email, placeholder: 'Email' %>
-  <%= f.radio_button :role, "Batsman" %>
-  <%= label_tag(:role, "Batsman") %>
-  <%= f.radio_button :role, "Bowler" %>
-  <%= label_tag(:role, "Bowler") %>
-  <%= f.radio_button :role, "All-Rounder" %>
-  <%= label_tag(:role, "All-Rounder") %>
-  <%= f.radio_button :role, "Wicketkeeper" %>
-  <%= label_tag(:role, "Wicketkeeper") %>
-  <%= f.number_field :team, placeholder: 'Team Number' %>
-  <%= f.text_area :bio, placeholder: 'Bio' %>
-  <%= f.submit yield(:btn_text) %>
-<% end %>
+<%= form_for @player, url: yield(:form_url) do |f| %>
+      <div class="form-header">
+        <h2><%= yield :form_title %></h2>
+      </div>
+      <div class="form-group">
+        <%= f.label :first_name, 'First name:' %>
+        <%= f.text_field :first_name, autocomplete: 'off' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :surname, 'Last name:' %>
+        <%= f.text_field :surname, autocomplete: 'off' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :email, 'Email address:' %>
+        <%= f.email_field :email, autocomplete: 'off' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :role, 'Team role:' %>
+        <%= f.select :role, ['Batsman', 'Bowler', 'All-Rounder', 'Wicketkeeper'] %>
+      </div>
+      <div class="form-group">
+        <%= f.label :team, 'Team number:' %>
+        <%= f.number_field :team %>
+      </div>
+      <div class="form-group">
+        <%= f.label :bio, 'Player Bio:' %>
+        <%= f.text_area :bio, rows: 10 %>
+      </div>
+      <div class="form-group">
+          <%= f.submit yield(:form_title), class: 'btn' %>
+      </div>
+    <% end %>

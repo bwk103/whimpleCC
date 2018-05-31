@@ -14,8 +14,8 @@ class EventsController < ApplicationController
       flash[:notice] = 'Event created successfully'
       redirect_to @event
     else
-      flash[:alert] = @event.errors.full_messages
-      redirect_to new_event_path
+      flash.now[:alert] = @event.errors.full_messages
+      render :new
     end
   end
 
@@ -33,8 +33,8 @@ class EventsController < ApplicationController
       flash[:notice] = 'Event updated successfully'
       redirect_to @event
     else
-      flash[:alert] = @event.errors.full_messages
-      redirect_to edit_event_url(@event)
+      flash.now[:alert] = @event.errors.full_messages
+      render :edit
     end
   end
 

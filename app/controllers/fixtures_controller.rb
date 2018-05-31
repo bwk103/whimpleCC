@@ -18,9 +18,25 @@ class FixturesController < ApplicationController
     end
   end
 
+  def edit
+    @fixture = Fixture.find(params[:id])
+  end
+
+  def update
+    @fixture = Fixture.find(params[:id])
+    if @fixture.update_attributes(fixture_params)
+      flash[:notice] = 'Fixture updated successfully'
+      redirect_to fixtures_url
+    else
+      flash.now[:alert] = @fixture.errors.full_messages
+      render :edit
+    end
+  end
+
   private
 
   def fixture_params
+    p params
     params.require(:fixture).permit(:opponent, :location, :match_start)
   end
 end

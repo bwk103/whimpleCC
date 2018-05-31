@@ -150,7 +150,7 @@ div.flash {
   min-height: 30px;
   margin-top: 10px;
   font-size: 15px;
-  width: 75%;
+  width: 50%;
   text-align: center;
 }
 
@@ -159,7 +159,11 @@ div.flash-notice {
 }
 
 div.flash-alert {
+  border: 2px solid red;
   color: red;
+  h2 {
+    text-decoration: underline;
+  }
 }
 
 li.display-mobile {
@@ -210,7 +214,7 @@ div.admin-form {
 
 section.form {
     min-height: 440px;
-    padding-top: 30px;
+    padding-top: 20px;
     width: 50%;
     form {
         margin: auto;
@@ -266,6 +270,24 @@ section.form {
                 }
             }
         }
+      .fixture-date {
+        select {
+          width: 20%;
+          margin-left: 5%;
+        }
+        select:first-of-type {
+          margin-left: 40px;
+        }
+      }
+      .fixture-time {
+        select {
+          width: 15%;
+          margin-left: 5%;
+        }
+        select:first-of-type {
+          margin-left: 40px;
+        }
+      }
     }
   }
 }

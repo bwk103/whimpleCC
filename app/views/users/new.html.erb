@@ -1,6 +1,7 @@
 <div id="signup" class="admin-only admin-form">
   <div class="admin-navbar">
   </div>
+  <%= render 'shared/flash' %>
   <section class="form">
     <%= form_for @user, url: '/users' do |f| %>
       <div class="form-header">

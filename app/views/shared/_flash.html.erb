@@ -1,7 +1,8 @@
 <% if flash[:alert] %>
     <div class="flash flash-alert">
+        <h2>Please resolve the following issues:</h2>
         <% flash[:alert].each do | alert | %>
-            <p><%= alert %></p>
+            <p>&#8226 <%= alert %></p>
         <% end %>
     </div>
 <% end %>

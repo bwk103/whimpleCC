@@ -17,8 +17,8 @@ class PlayersController < ApplicationController
       flash[:notice] = 'Player successfully created'
       redirect_to @player
     else
-      flash[:alert] = @player.errors.full_messages
-      redirect_to new_player_url
+      flash.now[:alert] = @player.errors.full_messages
+      render :new
     end
   end
 
@@ -32,8 +32,8 @@ class PlayersController < ApplicationController
       flash[:notice] = 'Player successfully updated'
       redirect_to @player
     else
-      flash[:alert] = @player.errors.full_messages
-      redirect_to edit_player_url(@player)
+      flash.now[:alert] = @player.errors.full_messages
+      render :edit
     end
   end
 
