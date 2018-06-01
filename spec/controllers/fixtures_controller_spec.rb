@@ -10,6 +10,8 @@ RSpec.describe FixturesController, type: :controller do
       whimple_score: nil,
       opponent_score: nil
     )
+    @user = User.create!( username: 'bob', password: 'test', admin: true )
+    log_in_as(@user)
   end
 
   describe '#index' do

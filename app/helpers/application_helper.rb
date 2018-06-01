@@ -13,7 +13,6 @@ module ApplicationHelper
   end
 
   def is_logged_in?
-    p 'hello'
     current_user && current_user.admin?
   end
 end

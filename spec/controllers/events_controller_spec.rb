@@ -16,6 +16,7 @@ RSpec.describe EventsController, type: :controller do
                        date: Date.new(2018, 3, 12),
                        location: 'Whimple CC',
                        description: 'Band night is back!' }
+    @user = User.create!( username: 'james', password: 'test', admin: true )
   end
 
   describe '#index' do
@@ -58,49 +59,73 @@ RSpec.describe EventsController, type: :controller do
   end
 
   describe '#new' do
-    before(:example) do
-      get :new
+    describe 'when admin user logged in' do
+      before(:example) do
+        log_in_as(@user)
+        get :new
+      end
+
+      it 'returns a 200 status code' do
+        expect(response.status).to eq 200
+      end
+
+      it 'renders the new template' do
+        expect(response).to render_template 'new'
+      end
     end
 
-    it 'returns a 200 status code' do
-      expect(response.status).to eq 200
-    end
+    describe 'when admin user not logged in' do
+      before(:example) do
+        get(:new)
+      end
 
-    it 'renders the new template' do
-      expect(response).to render_template 'new'
+      it 'returns a redirect status code' do
+        expect(@response.status).to be 302
+      end
+
+      it 'redirects the user to the root_path' do
+        expect(@response).to redirect_to root_path
+      end
     end
   end
 
   describe '#create' do
-    describe 'with valid attributes' do
-      it 'creates a new event' do
-        expect do
+    describe 'when admin user logged in' do
+      before(:example) do
+        log_in_as(@user)
+      end
+
+      describe 'with valid attributes' do
+        it 'creates a new event' do
+          expect do
+            post :create, params: { event: @valid_event }
+          end.to change(Event, :count).by(1)
+        end
+  
+        it 'redirects to the new event page' do
           post :create, params: { event: @valid_event }
-        end.to change(Event, :count).by(1)
+          expect(response).to redirect_to Event.last
+        end
       end
-
-      it 'redirects to the new event page' do
-        post :create, params: { event: @valid_event }
-        expect(response).to redirect_to Event.last
-      end
-    end
-
-    describe 'without valid attributes' do
-      it 'does not create a new event' do
-        expect do
+  
+      describe 'without valid attributes' do
+        it 'does not create a new event' do
+          expect do
+            post :create, params: { event: @invalid_event }
+          end.not_to change(Event, :count)
+        end
+  
+        it 're-renders the new event view' do
           post :create, params: { event: @invalid_event }
-        end.not_to change(Event, :count)
-      end
-
-      it 'redirects to the new event form' do
-        post :create, params: { event: @invalid_event }
-        expect(response).to redirect_to new_event_path
+          expect(response).to render_template 'new'
+        end
       end
     end
   end
 
   describe '#edit' do
     before(:example) do
+      log_in_as(@user)
       get :edit, params: { id: @event.id.to_s }
     end
 
@@ -119,6 +144,9 @@ RSpec.describe EventsController, type: :controller do
 
   describe '#update' do
     describe 'when given valid attributes' do
+      before(:example) do
+        log_in_as(@user)
+      end
       it 'updates the event' do
         patch :update, params: { id: @event.id, event: @valid_event }
         @event.reload
@@ -142,6 +170,9 @@ RSpec.describe EventsController, type: :controller do
   end
 
   describe '#destroy' do
+    before(:example) do
+      log_in_as(@user)
+    end
     it 'deletes the event' do
       expect do
         delete :destroy, params: { id: @event.id }

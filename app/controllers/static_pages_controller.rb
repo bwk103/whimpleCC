@@ -17,7 +17,6 @@ class StaticPagesController < ApplicationController
   def next_fixture
     fixtures = Fixture.all
     current_time = DateTime.now
-    p current_time
     future_fixtures = fixtures.select { |fixture| fixture.match_start > current_time }
     future_fixtures.sort_by!(&:match_start)[0]
   end

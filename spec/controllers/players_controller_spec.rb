@@ -77,7 +77,7 @@ RSpec.describe PlayersController, type: :controller do
 
       it 'redirects the user back to the new player form' do
         post :create, params: { player: @invalid_player }
-        expect(response).to redirect_to new_player_path
+        expect(response).to render_template 'new'
       end
     end
   end
@@ -149,9 +149,9 @@ RSpec.describe PlayersController, type: :controller do
         expect(@player.email).to eq 'henry@test.com'
       end
 
-      it 'redirects the user to the players index' do
+      it 're-renders the edit view' do
         patch :update, params: { id: @player.id.to_s, player: @invalid_player }
-        expect(response).to redirect_to edit_player_path(@player)
+        expect(response).to render_template 'edit'
       end
     end
   end

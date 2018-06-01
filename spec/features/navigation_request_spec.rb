@@ -18,7 +18,6 @@ RSpec.feature 'Navbar navigation', type: :feature do
     expect(page).to have_link('Players')
     expect(page).to have_link('Fixtures')
     expect(page).to have_link('Events')
-    expect(page).to have_link('More')
   end
 
   scenario 'User can navigate to players' do
