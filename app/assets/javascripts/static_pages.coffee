@@ -2,8 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-toggleMenu = -> 
-    console.log(this.parentNode.childNodes)
+toggleMenu = ->
+    navLinks = document.getElementsByClassName('nav-link')
+    navList = document.querySelector('.nav-links')
+    navList.classList.toggle('mobile-view')
+    for link in navLinks
+        link.classList.toggle('show-navlinks')
+
 
 window.onload = ->
     menuBtn = document.getElementsByClassName('menu-btn')[0]

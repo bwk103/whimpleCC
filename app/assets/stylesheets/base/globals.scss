@@ -5,6 +5,7 @@ $background-overlay: rgba(88, 196, 74, 0.315);
 $title-font: 'Montserrat', sans-serif;
 $body-font: 'Hind', sans-serif;
 
+
 body {
   font-family: $body-font;
 }
@@ -27,7 +28,7 @@ body {
     max-width: 1200px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 
     .logo {
       display: inline-block;
@@ -71,7 +72,7 @@ body {
 
 section.title {
   height: 600px;
-  width: 100%;
+  width: 100vw;
   font-family: $title-font;
   display: flex;
   flex-direction: row;
@@ -117,10 +118,6 @@ footer {
 }
 
 section#social-media {
-  grid-column-start: 1;
-  grid-column-end: 6;
-  grid-row-start: 4;
-  grid-row-end: 5;
   background: $whimple-green;
   height: 100%;
   display: flex;
@@ -133,9 +130,11 @@ section#social-media {
     flex-direction: row;
     align-items: flex-end;
     justify-content: center;
+    padding-left: 0px;
 
     li {
-      padding: 0 30px;
+      padding: 0px 15px;
+      flex: 1;
 
       a {
         color: white;
@@ -169,35 +168,7 @@ div.flash-alert {
 li.display-mobile {
   display: block;
   height: 50px;
-}
-
-@media only screen and (max-width: 770px) {
-
-  nav.navbar {
-    .wrapper {
-      flex-wrap: wrap;
-      .logo {
-        padding-top: 12px;
-        align-self: center;
-        width: 100%;
-        text-align: center;
-      }
-      .nav-links {
-          padding-left: 0px!important;
-        li {
-          padding-left: 0px;
-          display: none;
-          a {
-            font-size: 2em;
-            margin-left: 0px;
-          }
-        }
-        li.menu-btn {
-          display: block;
-        }
-      }
-    }
-  }
+  margin: auto;
 }
 
 div.admin-form {
@@ -290,4 +261,48 @@ section.form {
       }
     }
   }
+}
+
+@media only screen and (max-width: 770px) {
+
+  nav.navbar {
+    .wrapper {
+      flex-wrap: wrap;
+      .logo {
+        padding-top: 12px;
+        align-self: center;
+        width: 100%;
+        text-align: center;
+      }
+      .nav-links {
+          padding-left: 0px!important;
+        li {
+          padding-left: 0px;
+          display: none;
+          a {
+            font-size: 2em;
+            margin-left: 0px;
+          }
+        }
+        li.menu-btn {
+          order: -1;
+          display: block;
+        }
+      }
+    }
+  }
+  h1 {
+    display:none;
+  }
+}
+.show-navlinks {
+  display: block!important;
+  flex-basis: 100%;
+  text-align: center;
+  line-height: 2.0em;
+  
+}
+.mobile-view {
+  flex-wrap: wrap!important;
+  justify-content: center;
 }
