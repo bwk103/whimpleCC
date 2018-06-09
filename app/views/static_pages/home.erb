@@ -4,32 +4,82 @@
         <h1>Whimple Cricket Club</h1>
       </div>
     </section>
+    <%# <section id="latest-news">
+      <div class="content-container">
+        <div class="first">
+        <h1>First</h1>
+        </div>
+        <div class="second">
+        <h1>Second</h1>
+        </div>
+        <div class="third">
+        <h1>Third</h1>
+        </div>
+      </div>
+    </section> %>
+    <section id="links">
+      <div class="content-container">
+        <div class="get-involved">
+          <h2>Get Involved</h2>
+          <p id="head">If you're interested in joining the club as a player, a social member or by registering your child to attend youth sessions, please get in touch or come along on a Friday night.</p>
+          <a href="#">Join Us</a>
+        </div>
+      </div>
+    </section>
     <% if @fixture %>
       <section id="next-game">
-      <h2>Next Fixture</h2>
-        <%# <%= render 'fixtures/fixture', { fixture: @fixture } %> %>
-        <a href="/fixtures">View all fixtures</a>
+        <div class="content-container">
+          <h2>Next Match</h2>
+          <div class="title-fixture">
+            <h1>Whimple</h1>
+            <h2>vs</h2>
+            <h1><%= @fixture.opponent %></h1>
+          </div>
+          <h2><%=@fixture.match_start.strftime('%e %B %Y at %-I:%M%P')%></h2>
+          <h2><%=@fixture.location%></h2>
+        </div>
       </section>
-    <% end %>
-    <section id="about">
-    <div class="container">
-      <div class="details">
-        <h2>Get Involved</h2>
-        <p id="head">If you're interested in joining the club as a player, a social member or by registering your child to attend youth sessions, please get in touch or come along on a Friday night.</p>
-        <a href="#">Join Us</a>
+    <%end%>
+      <section id="lg-links">
+        <div class="content-container">
+          <div id="shop" class="lg-link">
+            <a href="#">
+              <div class="link-image">
+                <%= image_tag 'whimple-cap.jpeg' %>
+              </div>
+              <div class="card-box">
+                <p>Buy your Whimple CC teamware</p>
+              </div>
+            </a>
+          </div>
+          <div id="events" class="lg-link">
+            <a href="#">
+              <div class="link-image">
+                <%= image_tag 'knowle-cross.jpeg' %>
+              </div>
+              <div class="card-box">
+                <p>See whats happening at Knowle Cross</p>
+              </div>
+            </a>
+          </div>
+          <div id="membership"class="lg-link">
+            <a href="">
+              <div class="link-image">
+                <%= image_tag 'whimple-old-board.jpeg' %>
+              </div>
+              <div class="card-box">
+                <p>Join us as a playing or social member</p>
+              </div>
+            </a>
+          </div>
       </div>
-    </div>
+      </section>
+    <section id="image-break">
     </section>
-    <section id="links">
-      <div class="card">
-        <%= image_tag "card1.jpg" %>
-        <p>We currently have two senior teams and a friendly XI which plays 20/20 on Sundays.</p>
-        <a href="#">View Players</a>
-      </div>
-        <div class="card">
-        <%= image_tag "card2.jpg" %>
-        <p>We play across the weekends throughout the summer.  Come and join us for a match.</p>
-        <a href="#">View Fixtures</a>
+    <section id="about">
+      <div class="container">
+        <div class="details">
+        </div>
       </div>
     </section>
   </div>

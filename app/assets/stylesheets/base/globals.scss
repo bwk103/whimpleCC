@@ -8,6 +8,7 @@ $body-font: 'Hind', sans-serif;
 
 body {
   font-family: $body-font;
+  background: #f8f8f8;
 }
 
 .navbar {
@@ -291,15 +292,16 @@ section.form {
       }
     }
   }
-  h1 {
-    display:none;
-  }
 }
 .show-navlinks {
   display: block!important;
   flex-basis: 100%;
   text-align: center;
   line-height: 2.0em;
+  background: #b6b6b657;
+  border: 1px solid white;
+  padding-top: 3px;
+  padding-bottom: 3px;
   
 }
 .mobile-view {

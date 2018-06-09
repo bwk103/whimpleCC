@@ -3,10 +3,6 @@ body {
 }
 
 div#home {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 600px 300px 300px 500px 100px;
-  grid-row-gap: 10px;
 
   section.title {
     background: linear-gradient($background-overlay, $background-overlay), url('background.jpg');
@@ -14,10 +10,6 @@ div#home {
     background-size: cover;
     background-position: center;
     font-family: $title-font;
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 2;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -40,78 +32,57 @@ div#home {
   }
 
   section#next-game {
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 2;
-    grid-row-end: 3;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(rgba(46, 46, 73, 0.685), rgba(34, 36, 65, 0.815)), url('whimple-blur.jpg');
+    background-repeat: none;
+    background-size: cover;
+    background-position: left;
 
-    h2 {
-      color: $whimple-green;
-      font-size: 40px;
-      margin-bottom: 0px;
-    }
-
-    section.fixture {
-      height: 180px;
-      width: 100%;
+    div.content-container {
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
-      padding-bottom: 10px;
-      background: white;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 1000px;
+      width: 100%;
+      height: 100%;
+      color: white;
 
-      .details {
-        color: $whimple-green;
+      h2 {
+        font-weight: 800;
+        font-size: 25px;
+        color: white;
         text-align: center;
       }
-      .result {
-        display: none;
+
+      div.title-fixture {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
       }
-  }
 
-  .teams {
-      display: flex;
-      flex-direction: row;
-  
-      .team {
-          width: 33%;
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: flex-end;
-          
-
-          img {
-              border-radius: 50%;                
-              height: 100px;
-              width: 100px;
-              border: 2px solid $whimple-green;
-          }
-
-          .text {
-              padding-left: 10px;
-              align-self: flex-start;
-
-              h2{
-                  font-size: 30px;
-              }
-              p {
-                  font-size: 22px;
-              }
-          }
-      }
-      div.space {
-          width: 33%;
-      }
-      div#away-team {
-          justify-content: flex-start;
+      h1 {
+        text-align: center;
+        font-size: 60px;
       }
     }
+  }
+
+  section#image-break {
+    height: 300px;
+    background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0)), url('whimple-score-bw.jpg');
+    background-repeat: none;
+    background-size: cover;
+    background-position: left;
+  }
 
     a {
       color: $whimple-green;
@@ -128,22 +99,55 @@ div#home {
       background: $whimple-green;
       color: white;
     }
+
+  section#lg-links {
+    padding: 40px 0;
+    div.content-container {
+      margin: 0 auto;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      div.lg-link {
+        box-shadow: 1px 1px 1px rgb(214, 214, 214);
+        width: 30%;
+        height: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        div.link-image {
+          height: 172px;
+          width: 268px;
+          border-bottom: none;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        div.card-box {
+          background: white;
+          font-weight: 700;
+          width: 100%;
+        }
+      }
+    }
   }
 
   section#about {
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 3;
-    grid-row-end: 4;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: $whimple-green;
+    background: linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0)), url('whimple-score-bw.jpg');
+    background-repeat: none;
+    background-size: cover;
+    background-position: left;
 
     div.container {
-      max-width: 1200px;
+      max-width: 1000px;
 
       div.details {
         display: flex;
@@ -151,12 +155,12 @@ div#home {
         align-items: center;
         border-radius: 5px;
         h2 {
-          color: white;
+          color: $whimple-green;
           font-size: 40px;
         }
     
         p {
-          color: white;
+          color: $whimple-green;
           text-align: center;
           font-size: 18px;
         }
@@ -179,43 +183,29 @@ div#home {
     }
   }
   section#links {
-    height: 100%;
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 4;
-    grid-row-end: 5;
+    height: 200px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     padding-bottom: 20px;
+    background: #f8f8f8;
     
-    .card {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    div.content-container {
+      margin: 0 auto;
+      max-width: 1000px;
 
-      img {
-        height: 50%;
-        width: 50%;
-      }
-
-      p {
-        font-size: 18px;
-        width: 50%;
-        text-align: center;
-      }
-
-      a {
-        padding: 10px;
-        text-decoration: none;
-        color: white;
-        border: 2px solid $whimple-green;
-        background: $whimple-green;
-        border-radius: 15px;
+      div.get-involved {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        p {
+          text-align: center;
+        }
       }
     }
+  
   }
 }
 
