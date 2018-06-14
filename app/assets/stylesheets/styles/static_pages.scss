@@ -334,4 +334,27 @@ div#history {
   h1 {
     border-bottom: none!important;
   }
+
+  nav {
+    nav.wrapper {
+      padding-top: 20px!important;
+      flex-wrap: nowrap!important;
+      justify-content: space-evenly!important;
+    }
+
+    div.mob-menu {
+      width: 20%;
+      text-align: center;
+      a {
+        font-size: 25px!important;
+      }
+    }
+    div.logo {
+      width: 70%!important;
+      padding-top: 0px!important;
+      a {
+        font-size: 35px!important;
+      }
+    }
+  }
 }

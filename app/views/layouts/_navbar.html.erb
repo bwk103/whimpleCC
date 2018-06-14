@@ -1,5 +1,8 @@
 <nav class="navbar">
   <nav class="wrapper">
+    <div class="mob-menu">
+      <a href="#"><i class="fas fa-bars"></i></a>
+    </div>
     <div class="logo">
       <%= link_to 'Whimple CC', root_path %>
     </div>
@@ -13,7 +16,6 @@
       <% else %>
         <li class="nav-link"><%= link_to 'Login', login_path %></li>
       <% end%>
-      <li class="menu-btn"><a href="#"><i class="fas fa-bars"></i></a></li>
     </ul>
   </nav>
 </nav>
