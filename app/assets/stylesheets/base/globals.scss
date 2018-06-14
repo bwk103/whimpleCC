@@ -5,6 +5,10 @@ $background-overlay: rgba(88, 196, 74, 0.315);
 $title-font: 'Montserrat', sans-serif;
 $body-font: 'Hind', sans-serif;
 
+* {
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: $body-font;
@@ -19,8 +23,8 @@ body {
   left:0;
   right:0;
   bottom:0;
-  height: 72px;
-  padding: 5px 0;
+  height: 30px;
+  padding: 20px 0;
   background-color: rgba(213, 213, 213, 0);
   text-transform: uppercase;
 
@@ -268,8 +272,7 @@ section.form {
   }
 }
 
-@media only screen and (max-width: 770px) {
-
+@media only screen and (max-width: 500px) {
   nav.navbar {
     .wrapper {
       padding-top:20px;
@@ -295,6 +298,35 @@ section.form {
           padding-left: 0px!important;
         li {
           display: none;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 950px) and (min-width: 501px) {
+  nav.navbar {
+    nav.wrapper {
+      flex-wrap: wrap;
+      ul.nav-links {
+        padding-top: 15px;
+        width: 100%;
+        justify-content: space-evenly;
+        li {
+          text-align: left;
+          a {
+            margin-left: 20px;
+          }
+        }
+      }
+      div.logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        a {
+          width: 50%;
+          margin: auto;
+          text-align: center;
         }
       }
     }
