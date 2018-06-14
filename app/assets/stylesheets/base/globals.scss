@@ -31,6 +31,10 @@ body {
     align-items: center;
     justify-content: space-around;
 
+    .mob-menu {
+      display: none;
+    }
+
     .logo {
       display: inline-block;
 
@@ -268,43 +272,31 @@ section.form {
 
   nav.navbar {
     .wrapper {
-      flex-wrap: wrap;
-      .logo {
-        padding-top: 12px;
-        align-self: center;
-        width: 100%;
+      padding-top:20px;
+      justify-content: space-evenly;
+
+      .mob-menu {
+        display: inline-block;
+        width: 20%;
         text-align: center;
+        z-index: 2;
+        a {
+          font-size: 25px;
+        }
+      }
+      .logo {
+        width: 70%;
+        text-align: center;
+        a {
+          font-size: 35px;
+        }
       }
       .nav-links {
           padding-left: 0px!important;
         li {
-          padding-left: 0px;
           display: none;
-          a {
-            font-size: 2em;
-            margin-left: 0px;
-          }
-        }
-        li.menu-btn {
-          order: -1;
-          display: block;
         }
       }
     }
   }
-}
-.show-navlinks {
-  display: block!important;
-  flex-basis: 100%;
-  text-align: center;
-  line-height: 2.0em;
-  background: #b6b6b657;
-  border: 1px solid white;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  
-}
-.mobile-view {
-  flex-wrap: wrap!important;
-  justify-content: center;
 }

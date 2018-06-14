@@ -2,15 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-toggleMenu = ->
-    navLinks = document.getElementsByClassName('nav-link')
-    navList = document.querySelector('.nav-links')
-    navList.classList.toggle('mobile-view')
-
-    for link in navLinks
-        link.classList.toggle('show-navlinks')
-
+toggleOverlay = ->
+    document.querySelector('.overlay').classList.toggle('show-overlay')
 
 window.onload = ->
-    menuBtn = document.querySelector('.menu-btn')
-    menuBtn.addEventListener 'click', toggleMenu
+    menuOpen = document.querySelector('.menu-btn')
+    menuOpen.addEventListener 'click', toggleOverlay
