@@ -292,12 +292,14 @@ div#history {
       display: flex;
       align-items: flex-start;
       flex-direction: column;
+      margin-right: 20px;
       h1 {
         color: $whimple-green;
+        margin: 10px auto;
       }
       p {
         font-size: 18px;
-        text-align: left;
+        text-align: center;
       }
     }
     img {
@@ -326,8 +328,48 @@ div#history {
         text-align: center;
       }
     }
-  }
+  } 
 }
+
+@media only screen and (max-width: 500px) {
+  div#history {
+    section.club {
+      img {
+        display: none;
+      }
+      .details {
+        width: 100%;
+      }
+    }
+    section.recent {
+      .details {
+        width: 100%;
+      }
+    }
+    section.whiteways {
+      img {
+        display: none;
+      }
+      .details {
+        width: 100%;
+        .text {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+    section.knowle-cross {
+      div.details {
+        align-items: center;
+        width:100%;
+        p {
+          width: 90%;
+          padding-left: 0px;
+        }
+      }
+    }
+  }
+} 
 
 .overlay {
   height: 100%;
@@ -362,7 +404,6 @@ div#history {
 }
 
 @media only screen and (max-width: 850px) {
-
   h1 {
     border-bottom: none!important;
   }
