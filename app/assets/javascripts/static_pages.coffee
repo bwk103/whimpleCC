@@ -6,10 +6,11 @@ toggleMenu = ->
     navLinks = document.getElementsByClassName('nav-link')
     navList = document.querySelector('.nav-links')
     navList.classList.toggle('mobile-view')
+
     for link in navLinks
         link.classList.toggle('show-navlinks')
 
 
 window.onload = ->
-    menuBtn = document.getElementsByClassName('menu-btn')[0]
+    menuBtn = document.querySelector('.menu-btn')
     menuBtn.addEventListener 'click', toggleMenu
